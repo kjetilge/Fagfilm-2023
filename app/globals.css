@@ -1,3 +1,13 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+.embla { 
+  overflow: hidden;
+  width: 60%;
+  height: 100%;
+  position: relative;}
+.embla__container {  display: flex;}
+/* .embla__slide {  flex: 0 0 80%;  min-width: 0;} */
+
+.embla__slide {  margin-right: 20px; margin-left: 10px;} 
