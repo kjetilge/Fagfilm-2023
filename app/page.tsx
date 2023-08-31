@@ -1,11 +1,11 @@
-import Card from "@/components/home/card";
+import Card from "_components/home/card";
 import Balancer from "react-wrap-balancer";
-import { DEPLOY_URL } from "@/lib/constants";
-import { Github, Twitter } from "@/components/shared/icons";
-import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
+import { DEPLOY_URL } from "_lib/constants";
+import { Github, Twitter } from "_components/shared/icons";
+import WebVitals from "_components/home/web-vitals";
+import ComponentGrid from "_components/home/component-grid";
 import Image from "next/image";
-import { nFormatter } from "@/lib/utils";
+import { nFormatter } from "_lib/utils";
 
 export default async function Home() {
   const { stargazers_count: stars } = await fetch(

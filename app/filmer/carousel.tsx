@@ -1,7 +1,7 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
-import { Video, Category } from './types'
+import { Video, Category } from '../../_lib/types'
 import { thumb } from './thumbs'
 import useEmblaCarousel from 'embla-carousel-react'
 import 'swiper/css';

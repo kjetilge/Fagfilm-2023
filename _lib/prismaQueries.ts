@@ -1,12 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../api/auth/[...nextauth]/authOptions"
+import { authOptions } from "../app/api/auth/[...nextauth]/authOptions"
 import { get } from "http";
 
 const prisma = new PrismaClient();
 
 // should receive a session object from protected pages
-const getUser = async () => {
+export const getUser = async () => {
   'use server'
   const session = await getServerSession(authOptions)
   console.log('session', session) 
@@ -22,5 +22,3 @@ const getUser = async () => {
   //console.log('foundUser', foundUser)
   return foundUser
 }
-
-export default getUser
