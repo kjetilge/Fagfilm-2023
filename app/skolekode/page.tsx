@@ -12,7 +12,7 @@ export default async function Home() {
   const user = await getUser()
   const session = await getServerSession(authOptions)
   
-  // delete account
+
   async function deleteAccount() {
     'use server'
     const foundUser = await getUser()
@@ -28,6 +28,25 @@ export default async function Home() {
     }
     // signOut() // {redirect: false}
   }
+
+  // update user with skolekode
+  // async function updateSkolekode() {
+  //   'use server'
+  //   const foundUser = await getUser()
+  //   console.log(foundUser)
+  //   try { 
+  //     const res = await prisma.user.update({
+  //       where: {
+  //         email: foundUser?.email as string
+  //       },
+  //       data: {
+  //         skolekode: 'test'
+  //       }
+  //     })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   if(!user) {
     return (

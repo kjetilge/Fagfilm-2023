@@ -41,22 +41,34 @@ export const authOptions: NextAuthOptions = {
       from: process.env.EMAIL_FROM,
     })
   ],
-  events: {
-    updateUser: async (message) => {  
-      console.log("updateUser", message)
-    },
-    signOut: async (message) => {
-      console.log("signOut", message)
-    },
-    createUser: async (message) => {
-      console.log("createUser", message)
-    },
-    signIn: async (message) => {
-      console.log("signIn", message)
-      if (message.isNewUser) {
-        console.log("new user")
-        redirect('/login')
+  callbacks: {
+    async signIn(user, account, profile) {
+      console.log("signIn USER", user)
+      console.log("signIn ACCOUNT", account)
+      console.log("signIn PROFILE", profile)
+      if (user.email.verificationRequest) {
+        console.log("is verificationRequest")
+        return true
       }
+      return false
+    },
+    async redirect({ url, baseUrl }) {
+      return baseUrl
+    },
+  },
+  events: {
+    // updateUser: async (message) => {  
+    //   console.log("updateUser", message)
+    // },
+    // signOut: async (message) => {
+    //   console.log("signOut", message)
+    // },
+    // createUser: async (message) => {
+    //   console.log("createUser", message)
+    // },
+    signIn: async (message) => {
+      console.log("signIn EVENT")
+
     }
   },
 };
