@@ -7,6 +7,7 @@ export default function MoviesLayout({
   return (
     <>
       <nav>Filmkategori nav</nav>
+      <h1>Filmer</h1>
       <main>{children}</main>
     </>
   )

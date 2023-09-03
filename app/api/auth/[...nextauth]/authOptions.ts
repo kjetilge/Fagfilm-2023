@@ -3,7 +3,6 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "_lib/prisma";
 import EmailProvider from "next-auth/providers/email";
-
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
 export const authOptions: NextAuthOptions = {
@@ -45,7 +44,13 @@ export const authOptions: NextAuthOptions = {
       // Send properties to the client, like an access_token and user id from a provider.
       // const skolekode = user?.skolekode
       // session.skole = token.accessToken
+      console.log(JSON.stringify(session, null, 2))
       return session
     }
-  }
+  },
+  events: {
+    updateUser: async (message) => {  
+      console.log("updateUser", message)
+    }
+  },
 };

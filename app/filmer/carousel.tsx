@@ -1,15 +1,21 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
-import { Video, Category } from '../../_lib/types'
+import { Video, Category } from '../../types/fagfilmTypes'
 import { thumb } from './thumbs'
 import useEmblaCarousel from 'embla-carousel-react'
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 
-export default function VideosCatalog({ categories }: { categories: Category[] }) {
-  const [emblaRef] = useEmblaCarousel()
+type Props = {
+  categories: Category[]
+}
 
+// { categories = [] }: { categories: Category[] }
+export default function Carousel(props: Props) {
+  const categories = props.categories
+  const [emblaRef] = useEmblaCarousel()
+  console.log("CATS",JSON.stringify(categories, null, 2))
   return (
       <ul>
         {categories.map( category => {

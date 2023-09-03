@@ -13,12 +13,14 @@ export default async function Home() {
     <>
 
 
-        <h1 className="font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
+        {/* <h1 className="font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
           Building blocks for your Next project
-        </h1>
+        </h1> */}
 
-
-
+<h1 className="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+<h1>Hello world! 2</h1>
     </>
   );
 }
