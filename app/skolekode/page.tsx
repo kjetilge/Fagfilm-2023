@@ -1,4 +1,3 @@
-// create a simple html page in nextjs
 import React from 'react'
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "../../lib/prisma"
@@ -39,17 +38,15 @@ export default async function Home() {
   } else {
     return (
       <div>
-        <h1>Konto</h1>
-        <p>Her kan du slette din konto. Hvis du sletter den vil du ikke lenger kunne se fagfilm.</p>
-        <p>Vi vil ikke lagre noen informasjon om deg etter at du har slettet kontoen din.</p>
-        <p>Vi vil heller ikke lagre informasjon om deg hvis du ikke logger inn på kontoen din i løpet av 6 måneder.</p>
-        <p>Du kan enket melde deg på igjen med en gyldig skolekode</p>
+        <h1>Nesten der...</h1>
+        <p>Nå er det bare å taste inn skolekoden</p>
+
         <br />
   
         <form action={deleteAccount}>
-        <p>Slett din bruker: {user?.email} ?</p>
-        <button type="submit">Ja, slett nå</button>
-      </form>
+        
+        <button type="submit">OK</button>
+        </form>
       </div>
     )
   }

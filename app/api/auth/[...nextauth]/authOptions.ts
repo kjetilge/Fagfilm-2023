@@ -3,6 +3,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import EmailProvider from "next-auth/providers/email";
+import { redirect } from "next/navigation";
 
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
@@ -40,4 +41,22 @@ export const authOptions: NextAuthOptions = {
       from: process.env.EMAIL_FROM,
     })
   ],
+  events: {
+    updateUser: async (message) => {  
+      console.log("updateUser", message)
+    },
+    signOut: async (message) => {
+      console.log("signOut", message)
+    },
+    createUser: async (message) => {
+      console.log("createUser", message)
+    },
+    signIn: async (message) => {
+      console.log("signIn", message)
+      if (message.isNewUser) {
+        console.log("new user")
+        redirect('/login')
+      }
+    }
+  },
 };
