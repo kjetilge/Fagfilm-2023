@@ -4,6 +4,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import EmailProvider from "next-auth/providers/email";
 import { redirect } from "next/navigation";
+import getUser from "@/lib/getUser";
 
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
@@ -42,19 +43,28 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   callbacks: {
-    async signIn(user, account, profile) {
-      console.log("signIn USER", user)
-      console.log("signIn ACCOUNT", account)
-      console.log("signIn PROFILE", profile)
-      if (user.email.verificationRequest) {
-        console.log("is verificationRequest")
-        return true
-      }
-      return false
-    },
-    async redirect({ url, baseUrl }) {
-      return baseUrl
-    },
+    // async signIn({ user, account, profile, email, credentials }) {
+    //   // console.log("signIn USER", user)
+    //   // console.log("signIn ACCOUNT", account)
+    //   // console.log("signIn PROFILE", profile)
+    //   // console.log("signIn EMAIL", email)
+    //   // console.log("signIn CREDENTIALS", credentials)
+    //   if (email?.verificationRequest) {
+    //     console.log("******************** is verificationRequest\n")
+    //     return true
+    //   }
+    //   const userEmail = email?.toLowerCase()
+    //   const foundUser = await getUser(user.email || "")
+    //   if (!foundUser?.skolekode) {
+    //     return '/skolekode'
+    //   }
+    //   console.log("foundUser", foundUser)
+    //   console.log("-----------------------\n")
+    //   return true
+    // },
+    // async redirect({ url, baseUrl }) {
+    //   return baseUrl
+    // },
   },
   events: {
     // updateUser: async (message) => {  
@@ -68,7 +78,6 @@ export const authOptions: NextAuthOptions = {
     // },
     signIn: async (message) => {
       console.log("signIn EVENT")
-
     }
   },
 };
