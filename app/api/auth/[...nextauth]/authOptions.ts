@@ -3,6 +3,12 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "_lib/prisma";
 import EmailProvider from "next-auth/providers/email";
+<<<<<<< HEAD
+=======
+import { redirect } from "next/navigation";
+import getUser from "@/lib/getUser";
+
+>>>>>>> preview
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
 export const authOptions: NextAuthOptions = {
@@ -41,6 +47,7 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token, user }) {
+<<<<<<< HEAD
       // Send properties to the client, like an access_token and user id from a provider.
       // const skolekode = user?.skolekode
       // session.skole = token.accessToken
@@ -51,6 +58,30 @@ export const authOptions: NextAuthOptions = {
   events: {
     updateUser: async (message) => {  
       console.log("updateUser", message)
+=======
+      console.log(JSON.stringify(session, null, 2))
+      if(session.user?.email) {
+        const foundUser = await getUser(session.user.email)
+        // console.log('foundUser', foundUser)
+        session.user.skolekode = foundUser?.skolekode
+      }
+      console.log('NY SESSION',JSON.stringify(session, null, 2))
+      return session
+    },
+  },
+  events: {
+    // updateUser: async (message) => {  
+    //   console.log("updateUser", message)
+    // },
+    // signOut: async (message) => {
+    //   console.log("signOut", message)
+    // },
+    // createUser: async (message) => {
+    //   console.log("createUser", message)
+    // },
+    signIn: async (message) => {
+      console.log("signIn EVENT")
+>>>>>>> preview
     }
   },
 };

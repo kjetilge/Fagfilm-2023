@@ -1,7 +1,13 @@
 // create a simple html page in nextjs
+import React from 'react'
 import { PrismaAdapter } from "@auth/prisma-adapter";
+<<<<<<< HEAD
 import prisma from "../../_lib/prisma"
 import { getUser } from "_lib/prismaQueries"
+=======
+import prisma from "../../lib/prisma"
+import getUser from "../../lib/getUser"
+>>>>>>> preview
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../api/auth/[...nextauth]/authOptions"
 import { signOut } from "next-auth/react"
