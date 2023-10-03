@@ -43,28 +43,16 @@ export const authOptions: NextAuthOptions = {
     })
   ],
   callbacks: {
-    // async signIn({ user, account, profile, email, credentials }) {
-    //   // console.log("signIn USER", user)
-    //   // console.log("signIn ACCOUNT", account)
-    //   // console.log("signIn PROFILE", profile)
-    //   // console.log("signIn EMAIL", email)
-    //   // console.log("signIn CREDENTIALS", credentials)
-    //   if (email?.verificationRequest) {
-    //     console.log("******************** is verificationRequest\n")
-    //     return true
-    //   }
-    //   const userEmail = email?.toLowerCase()
-    //   const foundUser = await getUser(user.email || "")
-    //   if (!foundUser?.skolekode) {
-    //     return '/skolekode'
-    //   }
-    //   console.log("foundUser", foundUser)
-    //   console.log("-----------------------\n")
-    //   return true
-    // },
-    // async redirect({ url, baseUrl }) {
-    //   return baseUrl
-    // },
+    async session({ session, token, user }) {
+      console.log(JSON.stringify(session, null, 2))
+      if(session.user?.email) {
+        const foundUser = await getUser(session.user.email)
+        // console.log('foundUser', foundUser)
+        session.user.skolekode = foundUser?.skolekode
+      }
+      console.log('NY SESSION',JSON.stringify(session, null, 2))
+      return session
+    },
   },
   events: {
     // updateUser: async (message) => {  

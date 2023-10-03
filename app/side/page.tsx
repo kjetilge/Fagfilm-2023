@@ -10,15 +10,10 @@ import { nFormatter } from "@/lib/utils";
 export default async function Home() {
 
   return (
-    <>
-
-
+    <article className="prose lg:prose-xl prose-slate">
         <h1 className="font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]">
           Building blocks for your Next project
         </h1>
-
-
-
-    </>
+    </article>
   );
 }

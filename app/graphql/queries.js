@@ -74,11 +74,22 @@ export const VideoBySlugQuery = `query ($slugFilter: ModelVideoFilterInput) {
   }
 }`
 
-export const hasValidLicenseQuery = `query($code: String) {
-  hasValidLicense(code: $code)
+export const GetLicense = `query getLicense($licenseFilter: ModelLicenseFilterInput!) {
+  listLicenses(filter: $licenseFilter) {
+    items {
+      id
+      skolekode
+      betalt
+      aktiv
+      institusjon
+    }
+  }
 }`
 
 
+// export const hasValidLicenseQuery = `query($code: String) {
+//   hasValidLicense(code: $code)
+// }`
 
 // export const SearchLicenses = `query getLicense($licenseFilter: ModelLicenseFilterInput!) {
 //   listLicenses(filter: $licenseFilter) {

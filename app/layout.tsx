@@ -28,8 +28,8 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+      <body className={`${cx(sfPro.variable, inter.variable)}`}>
+        {/* <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" /> */}
         <Suspense fallback="...">
           {/* IKKE i bruk @ts-expect-error Server Component */}
           <Nav />
