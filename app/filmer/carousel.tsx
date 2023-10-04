@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import { Video, Category } from './types'
 import { thumb } from './thumbs'
-import useEmblaCarousel from 'embla-carousel-react'
+import UseEmblaCarousel from 'embla-carousel-react'
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 
 export default function videosCatalog({ categories }: { categories: Category[] }) {
-  const [emblaRef] = useEmblaCarousel()
+  const [emblaRef] = UseEmblaCarousel()
 
   return (
       <ul>
