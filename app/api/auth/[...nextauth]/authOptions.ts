@@ -45,13 +45,14 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async session({ session, token, user }) {
       console.log(JSON.stringify(session, null, 2))
+      let skolekode
       if(session.user?.email) {
         const foundUser = await getUser(session.user.email)
         // console.log('foundUser', foundUser)
-        session.user.skolekode = foundUser?.skolekode
+        skolekode = foundUser?.skolekode
       }
-      console.log('NY SESSION',JSON.stringify(session, null, 2))
-      return session
+      // console.log('NY SESSION',JSON.stringify(session, null, 2))
+      return {  ...session, skolekode }
     },
   },
   events: {
