@@ -1,9 +1,50 @@
 export {}
 
 declare global {
-  interface IPost {
-    id: number
+
+  type Chapter = {  
     title: string
-    body: string
+    start: number
+    posterTime: number
+  }
+  
+  type Video = {
+    title: string
+    categoryId: string
+    slug: string
+    posterTime: number
+    fileName: string
+    id: string
+    chapters: {
+      items: {
+        title: string
+        start: number
+        posterTime: number
+      }[]
+    }
+  }
+  
+  type Category = {
+    id: string
+    name: string
+    slug: string
+    videos: {
+      items: {
+        title: string
+        categoryId: string
+        slug: string
+        posterTime: number
+        fileName: string
+        id: string
+        chapters: {
+          items: {
+            title: string
+            start: number
+            posterTime: number
+          }[]
+        }
+      }[]
+    }
   }
 }
+
