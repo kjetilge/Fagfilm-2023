@@ -6,7 +6,6 @@ import { CategoriesQuery } from '@/app/graphql/queries'
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string
-import { Video, Category } from './types'
 
 export const getCategories = async () => {
 
