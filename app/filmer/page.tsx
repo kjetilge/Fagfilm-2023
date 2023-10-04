@@ -2,8 +2,6 @@ import { getCategories } from './requests'
 import dynamic from 'next/dynamic'
 const Carousel = dynamic(() => import('./carousel'), { ssr: false })
 
-import { Video, Category } from './types'
-
 // type Props = {
 //   categories: Category[]
 // }
