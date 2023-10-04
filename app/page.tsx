@@ -33,7 +33,7 @@ export default async function Home() {
         </p>
 
 
-        <div
+        {/* <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
@@ -70,7 +70,7 @@ export default async function Home() {
               <span className="hidden sm:inline-block">Lagres på</span> GitHub{" "}
             </p>
           </a>
-        </div>
+        </div> */}
       </div>
 
     </>
