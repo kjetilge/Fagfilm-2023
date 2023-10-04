@@ -7,11 +7,9 @@ import { useSession } from "next-auth/react"
 const prisma = new PrismaClient();
 
 // should receive a session object from protected pages
-<<<<<<<< HEAD:_lib/prismaQueries.ts
-export const getUser = async () => {
-========
-const getUser = async (email: string) => {
->>>>>>>> preview:_lib/getUser.ts
+
+export const getUser = async (email: string) => {
+
   'use server'
   const foundUser = await prisma.user.findUnique({
     where: {

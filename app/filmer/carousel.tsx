@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import { Video, Category } from '../../types/fagfilmTypes'
 import { thumb } from './thumbs'
-import useEmblaCarousel from 'embla-carousel-react'
+import UseEmblaCarousel from 'embla-carousel-react'
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 
@@ -14,7 +14,7 @@ type Props = {
 // { categories = [] }: { categories: Category[] }
 export default function Carousel(props: Props) {
   const categories = props.categories
-  const [emblaRef] = useEmblaCarousel()
+  const [emblaRef] = UseEmblaCarousel()
   console.log("CATS",JSON.stringify(categories, null, 2))
   return (
       <ul>
