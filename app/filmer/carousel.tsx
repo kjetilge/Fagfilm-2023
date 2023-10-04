@@ -7,9 +7,8 @@ import UseEmblaCarousel from 'embla-carousel-react'
 import 'swiper/css';
 import { Pagination } from 'swiper/modules';
 
-type Props = {
-  categories: Category[]
-}
+export default function videosCatalog({ categories }: { categories: Category[] }) {
+  const [emblaRef] = useEmblaCarousel()
 
 // { categories = [] }: { categories: Category[] }
 export default function Carousel(props: Props) {
