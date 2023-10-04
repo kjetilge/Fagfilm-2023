@@ -19,6 +19,7 @@ CREATE TABLE "Account" (
 -- CreateTable
 CREATE TABLE "Session" (
     "id" TEXT NOT NULL,
+    "skolekode" TEXT,
     "sessionToken" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "expires" TIMESTAMP(3) NOT NULL,
@@ -31,6 +32,7 @@ CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT,
     "email" TEXT,
+    "skolekode" TEXT,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,
 
