@@ -13,6 +13,7 @@ type LicenceFormProps = {
 };
 
 export default function LicenceForm({ licence }: LicenceFormProps) {
+  /* usage: <LicenceForm licence={licence} /> */
   const initialState = {
     message: null,
   }

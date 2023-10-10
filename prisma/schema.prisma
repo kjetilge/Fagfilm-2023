@@ -32,7 +32,7 @@ model Licence {
   orgNr         String
   kontaktperson String
   kontaktpersonEpostFraLisens String
-  PostmottakEpostFraNSR String
+  postmottakEpostFraNSR String
   lisensEier    String
   eiersOrgNr    String
   isGroupLicenseUser Boolean?
