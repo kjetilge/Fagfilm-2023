@@ -6,8 +6,13 @@ import { updateLicence } from './actions'
 import { SubmitButton } from './submit-button'
 import { useRef } from "react"
 
+import { Licence } from '@prisma/client';
 
-export default function LicenceForm(props) {
+type LicenceFormProps = {
+  licence: Licence;
+};
+
+export default function LicenceForm({ licence }: LicenceFormProps) {
   const initialState = {
     message: null,
   }

@@ -31,7 +31,7 @@ model Licence {
   sted          String
   orgNr         String
   kontaktperson String
-  KontaktpersonEpostFraLisens String
+  kontaktpersonEpostFraLisens String
   PostmottakEpostFraNSR String
   lisensEier    String
   eiersOrgNr    String
