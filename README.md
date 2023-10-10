@@ -24,6 +24,9 @@
 </p>
 <br/>
 
+
+// Om nextjs 13.5 her: https://nextjs.org/blog/next-13-5
+
 ## Introduction
 
 Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project.

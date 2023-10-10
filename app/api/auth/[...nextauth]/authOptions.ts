@@ -8,7 +8,6 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
-// Om nextjs 13.5 her: https://nextjs.org/blog/next-13-5
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
