@@ -72,7 +72,7 @@ export default function LicenceForm({ licence }: LicenceFormProps) {
       />
       <label htmlFor="fakturaUrl">FakturaUrl</label>
       <input type="text" name="fakturaUrl" defaultValue={licence.fakturaUrl ?? ''} required />
-      <SubmitButton disabled={pending}>Update Licence</SubmitButton>
+      <SubmitButton title={"lagre"} />
       <p aria-live="polite" className="sr-only">
         {state?.message}
       </p>

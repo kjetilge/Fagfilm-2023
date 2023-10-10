@@ -55,7 +55,7 @@ export default function AddLicenceForm() {
       <label htmlFor="fakturaUrl" className="block text-gray-700 font-bold mb-2">FakturaUrl</label>
       <input type="text" name="fakturaUrl" required />
 
-      <SubmitButton />
+      <SubmitButton title="Lagre"/>
       <p aria-live="polite" className="sr-only">
         {state?.message}
       </p>
