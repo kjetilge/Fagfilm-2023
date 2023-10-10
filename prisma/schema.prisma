@@ -27,19 +27,19 @@ model Licence {
   id            String  @id @default(cuid())
   skolekode     String @unique
   lisensbruker  String
-  postnummer    String
-  sted          String
+  postnummer    String?
+  sted          String?
   orgNr         String
-  kontaktperson String
-  kontaktpersonEpostFraLisens String
-  postmottakEpostFraNSR String
-  lisensEier    String
+  kontaktperson String?
+  kontaktpersonEpostFraLisens String?
+  postmottakEpostFraNSR String?
+  lisensEier    String?
   eiersOrgNr    String
   isGroupLicenseUser Boolean?
   startDate     DateTime
-  ressursnummer String @default("mangler")
-  endUserQuantity Int
-  fakturaUrl    String
+  ressursnummer String?
+  endUserQuantity Int?
+  fakturaUrl    String?
 }
 model Account {
   id                 String  @id @default(cuid())
