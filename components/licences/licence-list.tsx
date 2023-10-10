@@ -5,8 +5,8 @@ import LicenceForm from "./licence-form";
 
 export default function LicenceList() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [licences, setLicences] = useState([]);
-  const [selectedLicence, setSelectedLicence] = useState(null);
+  const [licences, setLicences] = useState<Licence[]>([]);
+  const [selectedLicence, setSelectedLicence] = useState<Licence | null>(null);
 
   useEffect(() => {
     async function fetchLicences() {
@@ -16,13 +16,13 @@ export default function LicenceList() {
     fetchLicences();
   }, []);
 
-  const handleSearchChange = async (event) => {
+  const handleSearchChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
     const licences = await getLicences(event.target.value);
     setLicences(licences);
   };
 
-  const handleEditClick = (licence) => {
+  const handleEditClick = (licence: Licence) => {
     setSelectedLicence(licence);
   };
 
