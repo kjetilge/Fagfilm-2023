@@ -13,7 +13,34 @@ datasource db {
   // shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-
+model Todo {
+  id       String  @id @default(cuid())
+  title    String
+}
+model Dublett {
+  id            String  @id @default(cuid())
+  skolekode     String
+  dublet        String
+  lisensbruker String
+}
+model Licence {
+  id            String  @id @default(cuid())
+  skolekode     String @unique
+  lisensbruker  String
+  postnummer    String
+  sted          String
+  orgNr         String
+  kontaktperson String
+  KontaktpersonEpostFraLisens String
+  PostmottakEpostFraNSR String
+  lisensEier    String
+  eiersOrgNr    String
+  isGroupLicenseUser Boolean?
+  startDate     DateTime
+  ressursnummer String @default("mangler")
+  endUserQuantity Int
+  fakturaUrl    String
+}
 model Account {
   id                 String  @id @default(cuid())
   userId             String

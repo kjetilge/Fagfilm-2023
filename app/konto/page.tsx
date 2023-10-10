@@ -6,13 +6,33 @@ import getUser from "../../lib/getUser"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../api/auth/[...nextauth]/authOptions"
 import { signOut } from "next-auth/react"
+import { getLicenseInfo } from "@/lib/licenceUtils"
 
 const adapter = PrismaAdapter(prisma)
 
 export default async function Home() {
+  const query = prisma.user.update(
+    {
+      where: {
+        email: 'sfdg',
+      },
+      data: {
+        skolekode: "kode",
+      },
+      select: {
+        email: true,
+        skolekode: true,
+      },
+    }
+    )
+
+  const session = await getServerSession(authOptions)
+  const lInfo= await getLicenseInfo()
   return (
     <div>
       <h1>Konto</h1>
+      <p>{JSON.stringify(lInfo)}</p>
+      <p>..</p>
       <p>Her kan du slette din konto. Hvis du sletter den vil du ikke lenger kunne se fagfilm.</p>
       <p>Vi vil ikke lagre noen informasjon om deg etter at du har slettet kontoen din.</p>
       <p>Vi vil heller ikke lagre informasjon om deg hvis du ikke logger inn på kontoen din i løpet av 6 måneder.</p>

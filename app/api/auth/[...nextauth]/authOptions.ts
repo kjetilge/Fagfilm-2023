@@ -1,12 +1,14 @@
 
 import NextAuth, { NextAuthOptions } from "next-auth";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/lib/prisma";
 import EmailProvider from "next-auth/providers/email";
 import { redirect } from "next/navigation";
 import getUser from "@/lib/getUser";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
+
+// Om nextjs 13.5 her: https://nextjs.org/blog/next-13-5
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -26,7 +28,7 @@ export const authOptions: NextAuthOptions = {
         return {
           id: profile.sub,
           email: profile.sub,
-          name: profile.name
+          name: profile.name,
         }
       },
     },
@@ -44,12 +46,18 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token, user }) {
-      console.log(JSON.stringify(session, null, 2))
+      // console.log(JSON.stringify(session, null, 2))
+      // console.log("TOKEN", JSON.stringify(token, null, 2))
+      console.log("user", JSON.stringify(user, null, 2))
       let skolekode
+      let isFeideUser, canView = false
+
       if(session.user?.email) {
         const foundUser = await getUser(session.user.email)
+        const userId = foundUser?.id
+        console.log('userId', userId)
         // console.log('foundUser', foundUser)
-        skolekode = foundUser?.skolekode
+        skolekode = "heisann-12345"//foundUser?.skolekode
       }
       // console.log('NY SESSION',JSON.stringify(session, null, 2))
       return {  ...session, skolekode }
@@ -66,7 +74,7 @@ export const authOptions: NextAuthOptions = {
     //   console.log("createUser", message)
     // },
     signIn: async (message) => {
-      console.log("signIn EVENT")
+      // console.log("signIn EVENT")
     }
   },
 };

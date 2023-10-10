@@ -1,7 +1,12 @@
 export {}
 
 declare global {
-
+  type LicenceInfo = {
+    canView: boolean | undefined
+    isExpired: boolean | undefined
+    skolekodeMissing: boolean | undefined
+  }
+  
   type Chapter = {  
     title: string
     start: number

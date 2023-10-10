@@ -4,6 +4,8 @@ import hasSkolekode from "@/lib/hasSkolekode";
 import { redirect } from "next/navigation";
 // import { useSession } from "next-auth/react"
 
+// use server side sessions
+// https://medium.com/@majidkuhail/server-side-session-in-next-js-v13-app-router-2d55d15bafb1
 
 export default async function Page() {
   const hasCode = await hasSkolekode();

@@ -13,7 +13,6 @@ export default function videosCatalog({ categories }: { categories: Category[] }
       <ul>
         {categories.map( category => {
           const videos = category.videos.items
-
           return (
 
             <li key={category.id}>
