@@ -1,4 +1,3 @@
-// create a simple html page in nextjs
 import React from 'react'
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "../../lib/prisma"
