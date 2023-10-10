@@ -7,7 +7,7 @@ import prisma from "@/lib/prisma";
 
 // to seed add this to package json: && node ./seed.mjs
 
-export async function getLicences(searchTerm: string): Promise<Licence[]> {
+export async function getLicences(searchTerm: string) {
   const licences = await prisma.licence.findMany({
     where: {
       OR: [
