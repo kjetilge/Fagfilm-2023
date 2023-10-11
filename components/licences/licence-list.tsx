@@ -29,19 +29,18 @@ export default function LicenceList() {
 
   return (
     <div>
-      <input type="text" value={searchTerm} onChange={handleSearchChange} />
+      <label htmlFor="search-input">Søk:</label>
+      <input id="search-input" type="text" value={searchTerm} onChange={handleSearchChange} />
       <table>
         <thead>
           <tr>
           <th>Lisensbruker</th>
-          <th>LisensEier</th>
+          <th>Lisenseier</th>
           <th>Skolekode</th>
-          <th>OrgNr</th>
-          <th>EiersOrgnr</th>
-          <th>IsGroupLicenseUser</th>
-          <th>ID</th>
-          <th>License Key</th>
-          <th>Actions</th>
+          <th>Orgnr</th>
+          <th>Eiers orgnr</th>
+          <th>Er gruppelisensbruker</th>
+          <th>Handlinger</th>
           </tr>
         </thead>
         <tbody>
@@ -51,12 +50,10 @@ export default function LicenceList() {
             <td>{licence.lisensEier}</td>
             <td>{licence.skolekode}</td>
             <td>{licence.orgNr}</td>
-            <td>{licence.eiersOrgnr}</td>
-            <td>{licence.isGroupLicenseUser ? "Yes" : "No"}</td>
-            <td>{licence.id}</td>
-            <td>{licence.licenseKey}</td>
+            <td>{licence.eiersOrgNr}</td>
+            <td>{licence.isGroupLicenseUser ? "Ja" : "Nei"}</td>
             <td>
-              <button onClick={() => handleEditClick(licence)}>Edit</button>
+              <button onClick={() => handleEditClick(licence)}>Endre</button>
             </td>
             </tr>
           ))}
