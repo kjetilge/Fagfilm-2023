@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { getLicences } from "./actions";
 import LicenceForm from "./licence-form";
+import type { Licence } from "@prisma/client";
 
 export default function LicenceList() {
   const [searchTerm, setSearchTerm] = useState("");
