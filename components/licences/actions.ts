@@ -86,10 +86,11 @@ export async function deleteLicence(formData: FormData) {
   const licenceId = formData.get('licenceId')
   console.log('licenceId ->', licenceId)
   if (licenceId !== null) {
+    const id = licenceId as string
     try {
       const licence = await prisma.licence.delete({
         where: {
-          id: licenceId
+          id: id
         }
       });
       console.log(licence);
