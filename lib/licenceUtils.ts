@@ -1,4 +1,4 @@
-import { License } from '@prisma/client';
+import { Licence } from '@prisma/client';
 import prisma from "@/lib/prisma";
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
