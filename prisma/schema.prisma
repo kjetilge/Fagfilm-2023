@@ -33,9 +33,9 @@ model Licence {
   kontaktperson String?
   kontaktpersonEpostFraLisens String?
   postmottakEpostFraNSR String?
-  lisensEier    String
+  lisenseier    String
   eiersOrgNr    String
-  isGroupLicenseUser Boolean @default(false)
+  isGroupLicenceUser Boolean @default(false)
   startDate     DateTime
   ressursnummer String?
   endUserQuantity Int?

@@ -6,7 +6,7 @@ type SubmitButtonProps = {
   title: string
 };
  
-export function SubmitButton({ title="OK" }: SubmitButtonProps) {
+export default function SubmitButton({ title="OK" }: SubmitButtonProps) {
   const { pending } = useFormStatus()
  
   return (

@@ -1,17 +1,19 @@
-import AddTodo from './add-form'
-import prisma from '@/lib/prisma'
-import DeleteTodo from './delete-form'
-import ItemList from './item-list'
-import LicenceList from '@/components/licences/licence-list'
-import Link from 'next/link'
+import { useState } from "react";
+import LicenceList from "@/components/licences/licence-list";
+import Link from "next/link";
+import ImportLicences from "@/components/licences/import-licences";
+import { getLicences } from "@/components/licences/actions";
+import { deleteLicence } from "@/components/licences/actions";
+
 
 export default async function Licences() {
-  //  const todos = await prisma.todo.findMany()
+  const licences = await getLicences("");
   return (
     <>
-    {/* <AddTodo /> */}
-    <Link href="/admin/lisenser/legg-til">Opprett lisens</Link>
-    <LicenceList />
+      <h1 className="text-2xl font-bold">Lisenser</h1>
+      <ImportLicences />
+      <Link href="/admin/lisenser/legg-til">Opprett lisens</Link>
+      <LicenceList licences={licences} deleteLicence={deleteLicence} />
     </>
-  )
+  );
 }

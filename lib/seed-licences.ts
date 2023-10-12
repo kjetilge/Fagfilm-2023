@@ -1,7 +1,8 @@
+'use server'
 import { PrismaClient, Licence } from '@prisma/client';
 import licences from "./licences.json" assert { type: "json" };
-import { v4 as uuid } from 'uuid'; 
 
+import { uuid } from 'uuidv4';
 const prisma = new PrismaClient();
 
 
@@ -19,13 +20,16 @@ function updateLicences(licences: License[]) {
     return {
       ...licence,
       startDate: licence.startDate.toISOString(),
+      postnummer: licence.postnummer === null ? "" : licence.postnummer.toString(),
       // ressursnummer: parseInt(licence.ressursnummer),
       // endUserQuantity: parseInt(licence.endUserQuantity),
-      orgNr: licence.orgNr === null ? "mangler" : licence.orgNr,
+      lisenseier: licence.lisenseier === null ? "mangler" : licence.lisenseier.toString(),
+      orgNr: licence.orgNr === null ? "mangler" : licence.orgNr.toString(),
       ressursnummer: licence.ressursnummer === null ? "mangler" : licence.ressursnummer.toString(),
       endUserQuantity: licence.endUserQuantity !== undefined ? parseInt(licence.endUserQuantity) : 0,
       eiersOrgNr: licence.eiersOrgNr === null ? "mangler" : licence.eiersOrgNr.toString(),
-      skolekode: licence.skolekode === "" ? "mangler_" + small_id : licence.skolekode,
+      skolekode: licence.skolekode === null ? "mangler_" + small_id : licence.skolekode,
+      isGroupLicenceUser: licence.isGroupLicenceUser === "true" ? true : false,
     };
   });
   return updatedLicences;
@@ -60,12 +64,14 @@ async function seed() {
           lisensbruker: licence.lisensbruker,
         }
       });
-      console.error("dublet: ", newLicence.skolekode)
+      console.error("dublet: ", newLicence.skolekode, e)
     }
   }
 }
 
-seed()
+
+export async function seedLicences () {
+  seed()
   .catch((e) => {
     console.error(e);
     process.exit(1);
@@ -73,14 +79,4 @@ seed()
   .finally(async () => {
     await prisma.$disconnect();
   });
-
-  export function seedLicenses () {
-    seed()
-    .catch((e) => {
-      console.error(e);
-      process.exit(1);
-    })
-    .finally(async () => {
-      await prisma.$disconnect();
-    });
-  }
+}

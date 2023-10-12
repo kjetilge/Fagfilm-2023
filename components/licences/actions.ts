@@ -4,6 +4,7 @@
 import { redirect } from 'next/navigation'
 import { revalidatePath, revalidateTag } from 'next/cache'
 import prisma from "@/lib/prisma";
+import { z } from 'zod'
 
 // to seed add this to package json: && node ./seed.mjs
 
@@ -12,7 +13,7 @@ export async function getLicences(searchTerm: string) {
     where: {
       OR: [
         { lisensbruker: { contains: searchTerm } },
-        { lisensEier: { contains: searchTerm } },
+        { lisenseier: { contains: searchTerm } },
         { skolekode: { contains: searchTerm } },
         { orgNr: { contains: searchTerm } },
         { eiersOrgNr: { contains: searchTerm } },
@@ -37,9 +38,9 @@ export async function createLicence(prevState: any, formData: FormData) {
         kontaktperson: formData.get('kontaktperson') as string,
         kontaktpersonEpostFraLisens: formData.get('KontaktpersonEpostFraLisens') as string,
         postmottakEpostFraNSR: formData.get('PostmottakEpostFraNSR') as string,
-        lisensEier: formData.get('lisensEier') as string,
+        lisenseier: formData.get('lisensEier') as string,
         eiersOrgNr: formData.get('eiersOrgnr') as string,
-        isGroupLicenseUser: formData.get('isGroupLicenseUser') === 'true',
+        isGroupLicenceUser: formData.get('isGroupLicenseUser') === 'true',
         startDate: new Date(formData.get('startDate') as string),
         ressursnummer: formData.get('ressursnummer') as string,
         endUserQuantity: parseInt(formData.get('endUserQuantity') as string),
@@ -54,4 +55,20 @@ export async function createLicence(prevState: any, formData: FormData) {
   revalidateTag('licences')
   // revalidatePath('/admin/lisenser');
   redirect(`/admin/lisenser`)
+}
+
+export async function deleteLicence(formData: FormData) {
+  const licenceId = formData.get('licenceId')
+  try {
+    const licence = await prisma.licence.delete({
+      where: {
+        id: licenceId
+      }
+    })
+    console.log(licence)
+    revalidateTag('licences')
+  } catch (e) {
+    console.log(e)
+    return { message: `Sletting gikk galt: ${JSON.stringify(e)}` } 
+  }
 }

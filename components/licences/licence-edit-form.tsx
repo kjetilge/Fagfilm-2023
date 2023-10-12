@@ -5,14 +5,15 @@ import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import { updateLicence } from './actions'
 import { SubmitButton } from './submit-button'
 import { useRef } from "react"
-
 import { Licence } from '@prisma/client';
+import styles from './styles.module.css'
 
 type LicenceFormProps = {
   licence: Licence;
+  handleSaveLicence: (licence: Licence) => void;
 };
 
-export default function LicenceForm({ licence }: LicenceFormProps) {
+export default function LicenceForm({ licence, handleSaveLicence }: LicenceFormProps) {
   /* usage: <LicenceForm licence={licence} /> */
   const initialState = {
     message: null,
@@ -20,9 +21,12 @@ export default function LicenceForm({ licence }: LicenceFormProps) {
   const [state, formAction] = useFormState(updateLicence, initialState)
   const { pending } = useFormStatus()
   const ref = useRef<HTMLFormElement>(null);
-
+  function updateLicence () {
+    alert('Hei')
+    // handleSaveLicence(licence);
+  }
   return (
-    <form action="updateLicence">
+    <form action="updateLicence" className={styles.licenceedit}>
       <label htmlFor="lisensbruker">Lisensbruker</label>
       <input type="text" name="lisensbruker" defaultValue={licence.lisensbruker} />
       <label htmlFor="skolekode">Skolekode</label>
@@ -72,7 +76,7 @@ export default function LicenceForm({ licence }: LicenceFormProps) {
       />
       <label htmlFor="fakturaUrl">FakturaUrl</label>
       <input type="text" name="fakturaUrl" defaultValue={licence.fakturaUrl ?? ''} required />
-      <SubmitButton title={"lagre"} />
+      <button type="submit">Lagre</button>
       <p aria-live="polite" className="sr-only">
         {state?.message}
       </p>
