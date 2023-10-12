@@ -49,7 +49,7 @@ export default function LicenceRow({ licence, deleteLicence, updateLicence }: Li
           
           <form action={deleteLicence}>
             <input type="hidden" name="licenceId" value={licence.id} />
-            <SubmitButton title= {`Slett ${licence.id}`} />
+            <SubmitButton title="Slett" />
           </form>
         </td>
       </tr>
