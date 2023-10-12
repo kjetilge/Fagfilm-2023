@@ -4,7 +4,7 @@
 import { redirect } from 'next/navigation'
 import { revalidatePath, revalidateTag } from 'next/cache'
 import prisma from "@/lib/prisma";
-import { z } from 'zod'
+// import { z } from 'zod'
 
 // to seed add this to package json: && node ./seed.mjs
 

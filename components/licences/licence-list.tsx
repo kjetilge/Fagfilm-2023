@@ -12,17 +12,18 @@ interface LicenceListProps {
   updateLicence: (formData: FormData) => Promise<void | { message: string; } >
 }
 
+type LicenceKey = keyof Licence;
 
 export default function LicenceList({ licences, deleteLicence, updateLicence }: LicenceListProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortColumn, setSortColumn] = useState("lisensbruker");
+  const [sortColumn, setSortColumn] = useState<LicenceKey>("lisensbruker");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleSortClick = (column: string) => {
+  const handleSortClick = (column: LicenceKey) => {
     if (column === sortColumn) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
@@ -50,10 +51,18 @@ export default function LicenceList({ licences, deleteLicence, updateLicence }: 
   const sortedLicences = filteredLicences.sort((a, b) => {
     const aValue = a[sortColumn];
     const bValue = b[sortColumn];
-
-    if (aValue < bValue) {
+  
+    if (aValue && bValue) {
+      if (aValue < bValue) {
+        return sortDirection === "asc" ? -1 : 1;
+      } else if (aValue > bValue) {
+        return sortDirection === "asc" ? 1 : -1;
+      } else {
+        return 0;
+      }
+    } else if (aValue) {
       return sortDirection === "asc" ? -1 : 1;
-    } else if (aValue > bValue) {
+    } else if (bValue) {
       return sortDirection === "asc" ? 1 : -1;
     } else {
       return 0;
