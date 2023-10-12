@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 interface LicencePopoverProps {
   licence: Licence;
   isPopoverOpen: boolean;
-  handleSaveLicence: (licence: Licence) => void;
+  handleSaveLicence: (formData: FormData) => Promise<void | { message: string; }>;
   onToggle: () => void;
 }
 

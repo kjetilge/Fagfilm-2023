@@ -3,17 +3,18 @@ import type { Licence } from "@prisma/client";
 // import DeleteLicence from "./delete-licence-form";
 import Link from "next/link";
 import LicenceForm from "./licence-edit-form";
-import Popover from "@/components/shared/popover";
+// import Popover from "@/components/shared/popover";
 import LicencePopover from "./edit-licence-popover";
 import { useState, useEffect } from "react";
 import SubmitButton from './submit-button'
 
 interface LicenceRowProps {
   licence: Licence;
-  deleteLicence: (formData: FormData) => void | string;
+  deleteLicence: (formData: FormData) => Promise<void | { message: string; }>;
+  updateLicence: (formData: FormData) => Promise<void | { message: string; }>;
 }
 
-export default function LicenceRow({ licence, deleteLicence }: LicenceRowProps) {
+export default function LicenceRow({ licence, deleteLicence, updateLicence }: LicenceRowProps) {
   const startDate = new Date(licence.startDate);
   const oneYearFromStartDate = new Date(startDate.getFullYear() + 1, startDate.getMonth(), startDate.getDate());
   const formattedDate = `${oneYearFromStartDate.getDate().toString().padStart(2, "0")}.${(oneYearFromStartDate.getMonth() + 1).toString().padStart(2, "0")}.${oneYearFromStartDate.getFullYear()}`;
@@ -42,13 +43,13 @@ export default function LicenceRow({ licence, deleteLicence }: LicenceRowProps) 
           <LicencePopover
             licence={licence}
             isPopoverOpen={isPopoverOpen}
-            setIsPopoverOpen={setIsPopoverOpen}
             onToggle={handleToggle}
+            handleSaveLicence={updateLicence}
           />
           
           <form action={deleteLicence}>
             <input type="hidden" name="licenceId" value={licence.id} />
-            <SubmitButton title='Slett' />
+            <SubmitButton title= {`Slett ${licence.id}`} />
           </form>
         </td>
       </tr>

@@ -3,30 +3,22 @@
 import { experimental_useFormState as useFormState } from 'react-dom'
 import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import { updateLicence } from './actions'
-import { SubmitButton } from './submit-button'
+import SubmitButton from './submit-button'
 import { useRef } from "react"
 import { Licence } from '@prisma/client';
 import styles from './styles.module.css'
 
 type LicenceFormProps = {
   licence: Licence;
-  handleSaveLicence: (licence: Licence) => void;
+  handleSaveLicence:  (formData: FormData) => Promise<void | { message: string; }>;
 };
 
 export default function LicenceForm({ licence, handleSaveLicence }: LicenceFormProps) {
   /* usage: <LicenceForm licence={licence} /> */
-  const initialState = {
-    message: null,
-  }
-  const [state, formAction] = useFormState(updateLicence, initialState)
-  const { pending } = useFormStatus()
-  const ref = useRef<HTMLFormElement>(null);
-  function updateLicence () {
-    alert('Hei')
-    // handleSaveLicence(licence);
-  }
+
   return (
-    <form action="updateLicence" className={styles.licenceedit}>
+    <form action={handleSaveLicence} className={styles.licenceedit}>
+      <input type="hidden" name="licenceId" value={licence.id} />
       <label htmlFor="lisensbruker">Lisensbruker</label>
       <input type="text" name="lisensbruker" defaultValue={licence.lisensbruker} />
       <label htmlFor="skolekode">Skolekode</label>
@@ -54,14 +46,14 @@ export default function LicenceForm({ licence, handleSaveLicence }: LicenceFormP
         required
       />
       <label htmlFor="lisensEier">LisensEier</label>
-      <input type="text" name="lisensEier" defaultValue={licence.lisensEier} required />
+      <input type="text" name="lisensEier" defaultValue={licence.lisenseier} required />
       <label htmlFor="eiersOrgnr">EiersOrgnr</label>
       <input type="text" name="eiersOrgnr" defaultValue={licence.eiersOrgNr} required />
       <label htmlFor="isGroupLicenseUser">IsGroupLicenseUser</label>
       <input
         type="checkbox"
         name="isGroupLicenseUser"
-        defaultChecked={licence.isGroupLicenseUser}
+        defaultChecked={licence.isGroupLicenceUser}
       />
       <label htmlFor="startDate">StartDate</label>
       <input type="date" name="startDate" defaultValue={licence.startDate.toISOString().substr(0, 10)} required />
@@ -77,10 +69,6 @@ export default function LicenceForm({ licence, handleSaveLicence }: LicenceFormP
       <label htmlFor="fakturaUrl">FakturaUrl</label>
       <input type="text" name="fakturaUrl" defaultValue={licence.fakturaUrl ?? ''} required />
       <button type="submit">Lagre</button>
-      <p aria-live="polite" className="sr-only">
-        {state?.message}
-      </p>
-      <p>{state?.message}</p>
     </form>
   );
 }

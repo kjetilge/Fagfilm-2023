@@ -6,7 +6,14 @@ import Link from "next/link";
 import DeleteLicence from "./delete-licence-form";
 import LicenceRow from "./licence-row";
 
-export default function LicenceList({ licences, deleteLicence }: { licences: Licence[], deleteLicence: (formData: FormData) => void | string }) {
+interface LicenceListProps {
+  licences: Licence[],
+  deleteLicence: (formData: FormData) => Promise<void | { message: string; } >
+  updateLicence: (formData: FormData) => Promise<void | { message: string; } >
+}
+
+
+export default function LicenceList({ licences, deleteLicence, updateLicence }: LicenceListProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortColumn, setSortColumn] = useState("lisensbruker");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
@@ -21,6 +28,18 @@ export default function LicenceList({ licences, deleteLicence }: { licences: Lic
     } else {
       setSortColumn(column);
       setSortDirection("asc");
+    }
+  };
+
+  const handleDeleteClick = async (formData: FormData) => {
+    const confirmed = window.confirm("Er du sikker på at du vil slette denne lisensen ?");
+
+    if (confirmed) {
+      try {
+        const message = await deleteLicence(formData);
+      } catch (error) {
+        alert("Sletting gikk galt");
+      }
     }
   };
 
@@ -135,7 +154,7 @@ export default function LicenceList({ licences, deleteLicence }: { licences: Lic
         </thead>
         <tbody>
           {sortedLicences.map((licence) => (
-            <LicenceRow key={licence.id} licence={licence} deleteLicence={deleteLicence}/>
+            <LicenceRow key={licence.id} licence={licence} deleteLicence={handleDeleteClick} updateLicence={updateLicence}/>
           ))}
         </tbody>
       </table>

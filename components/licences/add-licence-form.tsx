@@ -3,7 +3,7 @@
 import { experimental_useFormState as useFormState } from 'react-dom'
 import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import { createLicence } from './actions'
-import { SubmitButton } from './submit-button'
+import SubmitButton from './submit-button'
 import { useRef } from "react";
 
 const initialState = {
