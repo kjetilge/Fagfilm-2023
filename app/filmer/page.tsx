@@ -1,16 +1,17 @@
-import { getCategories } from './requests'
-import dynamic from 'next/dynamic'
-const Carousel = dynamic(() => import('./carousel'), { ssr: false })
+// import { getCategories } from './requests'
+// import dynamic from 'next/dynamic'
+// const Carousel = dynamic(() => import('./carousel'), { ssr: false })
 
 // type Props = {
 //   categories: Category[]
 // }
 
 export default async function videosCatalog() {
-  const categories = await getCategories()
+  // const categories = await getCategories()
   return (
     <>
-      <Carousel categories={categories} />
+    <p>Filmer</p>
+      {/* <Carousel categories={categories} /> */}
     </>
 
   )
