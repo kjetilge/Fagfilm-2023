@@ -4,7 +4,8 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
 import { PrismaClient } from "@prisma/client";
 
-export const getLicenseInfo = async (): LicenceInfo => {
+export const getLicenceInfo = async (): Promise<LicenceInfo> => {
+
   const info: LicenceInfo = {
     canView: false,
     isExpired: undefined,
@@ -30,13 +31,13 @@ export const getLicenseInfo = async (): LicenceInfo => {
   }
 
   // user is logged in with email and skolekode is present
-  const license = await getLicense(user.skolekode)
+  const license = await getLicence(user.skolekode)
   console.log('license', license)
   if (!license) {
     info.skolekodeMissing = true
     return info
   }
-  info.isExpired = isLicenseExpired(license)
+  info.isExpired = isLicenceExpired(license)
   info.canView = !info.isExpired
   
   return info
@@ -56,9 +57,9 @@ async function getUser () {
   return null
 }
 
-// create a typed function isLicenseExpired, that takes a License and checks if the startDate is more than 1 year ago and returns a boolan
+// create a typed function isLicenceExpired, that takes a Licence and checks if the startDate is more than 1 year ago and returns a boolan
 // indicating whether or not the license is valid
-export const isLicenseExpired = (license: License): boolean => {
+export const isLicenceExpired = (license: Licence): boolean => {
   const startDate = new Date(license.startDate)
   const now = new Date()
   const oneYearAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate())
@@ -66,10 +67,10 @@ export const isLicenseExpired = (license: License): boolean => {
 }
 
 
-export const getLicense = async (skolekode: string): Promise<License | null> => {
+export const getLicence = async (skolekode: string): Promise<Licence | null> => {
   // get the license from the database
 
-  const license = await prisma.license.findUnique({
+  const license = await prisma.licence.findUnique({
     where: {
       skolekode
     }
