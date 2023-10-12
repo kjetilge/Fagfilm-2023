@@ -5,7 +5,7 @@ import getUser from "../../lib/getUser"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../api/auth/[...nextauth]/authOptions"
 import { signOut } from "next-auth/react"
-import { getLicenseInfo } from "@/lib/licenceUtils"
+import { getLicenceInfo } from "@/lib/licenceUtils"
 
 const adapter = PrismaAdapter(prisma)
 
@@ -26,7 +26,7 @@ export default async function Home() {
     )
 
   const session = await getServerSession(authOptions)
-  const lInfo= await getLicenseInfo()
+  const lInfo= await getLicenceInfo()
   return (
     <div>
       <h1>Konto</h1>
