@@ -85,16 +85,20 @@ export async function deleteLicence(formData: FormData) {
   console.log('formData ->', formData)
   const licenceId = formData.get('licenceId')
   console.log('licenceId ->', licenceId)
-  try {
-    const licence = await prisma.licence.delete({
-      where: {
-        id: licenceId
-      }
-    })
-    console.log(licence)
-    return revalidateTag('licences')
-  } catch (e) {
-    console.log(e)
-    return { message: `Sletting gikk galt: ${JSON.stringify(e)}` } 
+  if (licenceId !== null) {
+    try {
+      const licence = await prisma.licence.delete({
+        where: {
+          id: licenceId
+        }
+      });
+      console.log(licence);
+      return revalidateTag('licences');
+    } catch (e) {
+      console.log(e);
+      return { message: `Sletting gikk galt: ${JSON.stringify(e)}` };
+    }
+  } else {
+    return { message: `Sletting gikk galt: licenceId is null` };
   }
 }
