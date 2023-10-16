@@ -1,10 +1,12 @@
 
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth"
 import prisma from "@/lib/prisma";
 import EmailProvider from "next-auth/providers/email";
 import { redirect } from "next/navigation";
 import getUser from "@/lib/getUser";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { Profiler } from "react";
+
 
 const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
@@ -12,6 +14,12 @@ const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
+    {
+      id: 'sendgrid',
+      type: 'email',
+      async sendVerificationRequest({identifier: email, url}) {
+      }
+    },
     {
       id: "feide",
       name: "Feide",
@@ -31,36 +39,48 @@ export const authOptions: NextAuthOptions = {
         }
       },
     },
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST,
-        port: Number(process.env.EMAIL_SERVER_PORT),
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
-      },
-      from: process.env.EMAIL_FROM,
-    })
+
+    // EmailProvider({
+    //   server: {
+    //     host: process.env.EMAIL_SERVER_HOST,
+    //     port: Number(process.env.EMAIL_SERVER_PORT),
+    //     auth: {
+    //       user: process.env.EMAIL_SERVER_USER,
+    //       pass: process.env.EMAIL_SERVER_PASSWORD,
+    //     },
+    //   },
+    //   from: process.env.EMAIL_FROM,
+    // })
   ],
   callbacks: {
     async session({ session, token, user }) {
       // console.log(JSON.stringify(session, null, 2))
       // console.log("TOKEN", JSON.stringify(token, null, 2))
-      console.log("user", JSON.stringify(user, null, 2))
+      // console.log("user", JSON.stringify(user, null, 2))
       let skolekode
       let isFeideUser, canView = false
 
       if(session.user?.email) {
         const foundUser = await getUser(session.user.email)
         const userId = foundUser?.id
-        console.log('userId', userId)
+        // console.log('userId', userId)
         // console.log('foundUser', foundUser)
         skolekode = "heisann-12345"//foundUser?.skolekode
       }
       // console.log('NY SESSION',JSON.stringify(session, null, 2))
       return {  ...session, skolekode }
     },
+    async signIn({ user, account, profile, email, credentials }) {
+      const isAllowedToSignIn = true
+      if (isAllowedToSignIn) {
+        return true
+      } else {
+        // Return false to display a default error message
+        return false
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
+    }
   },
   events: {
     // updateUser: async (message) => {  

@@ -6,18 +6,19 @@ import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
+
 export const metadata = {
   title: "Fagfilm",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+    "Fagfilm git deg filmer om videregående utdanning og yrkesvalg.",
   twitter: {
     card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
+    title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
     description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
+      "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
+    creator: "@fagfilm",
   },
-  metadataBase: new URL("https://precedent.dev"),
+  metadataBase: new URL("https://fagfilm.dev"),
   themeColor: "#FFF",
 };
 

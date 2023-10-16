@@ -9,7 +9,8 @@ import { nFormatter } from "@/lib/utils";
 
 export default async function Home() {
 
-
+  // const session = await getServerSession(authOptions)
+  
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
