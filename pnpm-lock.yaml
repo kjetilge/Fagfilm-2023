@@ -16,7 +16,7 @@ dependencies:
     version: 3.427.0(aws-crt@1.18.0)
   '@next-auth/prisma-adapter':
     specifier: ^1.0.7
-    version: 1.0.7(@prisma/client@5.4.2)(next-auth@4.23.2)
+    version: 1.0.7(@prisma/client@5.4.2)(next-auth@4.24.3)
   '@prisma/client':
     specifier: ^5.4.2
     version: 5.4.2(prisma@5.4.2)
@@ -78,8 +78,8 @@ dependencies:
     specifier: 13.5.4
     version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
   next-auth:
-    specifier: ^4.23.2
-    version: 4.23.2(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^4.24.3
+    version: 4.24.3(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0)
   nextjs:
     specifier: ^0.0.3
     version: 0.0.3
@@ -89,6 +89,9 @@ dependencies:
   react:
     specifier: 18.2.0
     version: 18.2.0
+  react-alice-carousel:
+    specifier: ^2.8.0
+    version: 2.8.0(react@18.2.0)
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
@@ -729,14 +732,14 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@next-auth/prisma-adapter@1.0.7(@prisma/client@5.4.2)(next-auth@4.23.2):
+  /@next-auth/prisma-adapter@1.0.7(@prisma/client@5.4.2)(next-auth@4.24.3):
     resolution: {integrity: sha512-Cdko4KfcmKjsyHFrWwZ//lfLUbcLqlyFqjd/nYE2m3aZ7tjMNUjpks47iw7NTCnXf+5UWz5Ypyt1dSs1EP5QJw==}
     peerDependencies:
       '@prisma/client': '>=2.26.0 || >=3'
       next-auth: ^4
     dependencies:
       '@prisma/client': 5.4.2(prisma@5.4.2)
-      next-auth: 4.23.2(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0)
+      next-auth: 4.24.3(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@next/env@13.5.4:
@@ -4405,8 +4408,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: false
 
-  /next-auth@4.23.2(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-VRmInu0r/yZNFQheDFeOKtiugu3bt90Po3owAQDnFQ3YLQFmUKgFjcE2+3L0ny5jsJpBXaKbm7j7W2QTc6Ye2A==}
+  /next-auth@4.24.3(next@13.5.4)(nodemailer@6.9.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-n1EvmY7MwQMSOkCh6jhI6uBneB6VVtkYELVMEwVaCLD1mBD3IAAucwk+90kgxramW09nSp5drvynwfNCi1JjaQ==}
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
@@ -4956,6 +4959,15 @@ packages:
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  /react-alice-carousel@2.8.0(react@18.2.0):
+    resolution: {integrity: sha512-c1l4+xxOVF0xClwQXMVzfC5KUfLpkf5zXpxMcX5qN8bvpE9q/Fj22PBuPOweivr4C33djXPh//NL75D9Jl4OLw==}
+    peerDependencies:
+      react: '>=15.4'
+    dependencies:
+      react: 18.2.0
+      vanilla-swipe: 2.4.1
+    dev: false
 
   /react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
@@ -5916,6 +5928,10 @@ packages:
       diff: 5.1.0
       kleur: 4.1.5
       sade: 1.8.1
+    dev: false
+
+  /vanilla-swipe@2.4.1:
+    resolution: {integrity: sha512-o6pfI0dipet88ZnPLV4Jx04Ia+U3xANh14vhROW2TOe/mrwk2JGG68+Z0BPoD1YUcQQEnK4SZBXkqFe+K1l7/w==}
     dev: false
 
   /verror@1.10.0:

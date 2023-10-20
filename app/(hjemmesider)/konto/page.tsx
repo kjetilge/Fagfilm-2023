@@ -1,9 +1,9 @@
 import React from 'react'
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import prisma from "../../lib/prisma"
-import getUser from "../../lib/getUser"
+import prisma from "../../../lib/prisma"
+import getUser from "../../../lib/getUser"
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../api/auth/[...nextauth]/authOptions"
+import { authOptions } from "../../api/auth/[...nextauth]/authOptions"
 import { signOut } from "next-auth/react"
 import { getLicenceInfo } from "@/lib/licenceUtils"
 

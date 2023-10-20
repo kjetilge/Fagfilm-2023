@@ -4,9 +4,9 @@ import { getServerSession } from "next-auth"
 
 // This function can be marked `async` if using `await` inside
 export default async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-  const response = NextResponse.next()
-  const session = await getServerSession(authOptions);
+  // const { pathname } = request.nextUrl
+  // const response = NextResponse.next()
+  // const session = await getServerSession(authOptions);
 
   // FIX PROBLEM:
   // HTTP-based Email Provider

@@ -14,11 +14,16 @@ const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
+    /* https://github.com/nextauthjs/next-auth/discussions/8487#discussioncomment-6948757 Her er også OIDC svar og experimental */
     {
-      id: 'sendgrid',
-      type: 'email',
-      async sendVerificationRequest({identifier: email, url}) {
-      }
+      id: "email",
+      type: "email",
+      name: "Email",
+      from: "",
+      server: "",
+      maxAge: 60 * 10,
+      options: {},
+      async sendVerificationRequest() { },
     },
     {
       id: "feide",
