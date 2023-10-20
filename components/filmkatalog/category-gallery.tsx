@@ -5,7 +5,7 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 // import { Video } from '@/prisma/client';
 
 interface CategoryVideosProps {
-  videos: Videos[];
+  videos: Video[];
 }
 
 // const handleDragStart = (e) => e.preventDefault();
