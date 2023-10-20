@@ -1,9 +1,9 @@
 import { useState } from "react";
-import LicenceList from "@/components/licences/licence-list";
+import LicenceList from "@/components/hjemmesider/licences/licence-list";
 import Link from "next/link";
-import ImportLicences from "@/components/licences/import-licences";
-import { getLicences } from "@/components/licences/actions";
-import { deleteLicence, updateLicence } from "@/components/licences/actions";
+import ImportLicences from "@/components/hjemmesider/licences/import-licences";
+import { getLicences } from "@/components/hjemmesider/licences/actions";
+import { deleteLicence, updateLicence } from "@/components/hjemmesider/licences/actions";
 
 // interface LicenceListProps {
 //   licences: Licence[];

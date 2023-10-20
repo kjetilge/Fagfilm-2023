@@ -1,4 +1,4 @@
-import { getCategories } from '@/components/filmkatalog/requests'
+import { getCategories } from '@/lib/graphql/requests'
 import Link from 'next/link'
 
 export default async function AllCategories () {

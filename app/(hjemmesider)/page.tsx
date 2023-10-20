@@ -1,9 +1,9 @@
-import Card from "@/components/home/card";
+import Card from "@/components/hjemmesider/home/card";
 import Balancer from "react-wrap-balancer";
 import { DEPLOY_URL } from "@/lib/constants";
 import { Github, Twitter } from "@/components/shared/icons";
-import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
+import WebVitals from "@/components/hjemmesider/home/web-vitals";
+import ComponentGrid from "@/components/hjemmesider/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 

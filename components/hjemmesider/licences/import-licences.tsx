@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { seedLicences } from "@/lib/seed-licences";
 import Popover from "@/components/shared/popover";
-import LicenceForm from '@/components/licences/licence-edit-form';
+import LicenceForm from '@/components/hjemmesider/licences/licence-edit-form';
 export default function ImportLicences() {
   const [isSeeding, setIsSeeding] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
