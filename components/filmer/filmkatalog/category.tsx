@@ -1,36 +1,26 @@
-import { getCategoryById } from '@/lib/graphql/getCategoryById'
-import getCategoryBySlug from '@/lib/graphql/get-category-by-slug'
-import { getCategoriesOnly } from '@/lib/graphql/getCategoriesOnly'
 import Link from 'next/link'
+import getCategoryBySlug from '@/lib/graphql-requests/get-category-by-slug'
+import NotFound from '@/components/shared/not-found'
+import getCategoriesOnly from '@/lib/graphql-requests/get-categories-only'
 
-interface Category {
-  id: number;
-  name: string;
-  slug: string;
+type CategoryProps = {
+  categorySlug: string;
 }
 
-// function findCategoryBySlug(categories: Category[], slug: string): Category | undefined {
-//   return categories.find((category) => category.slug === slug);
-// }
-
-export default async function Category (slug: string) {
-  // console.log('slug', slug)
-  const category = await getCategoryBySlug({ slug })
-  const name = category?.name || ''
-  const videos = category?.videos.items || []
-  // const categories = await getCategoriesOnly()
-  // const categoryId = findCategoryBySlug(categories, slug)?.toString() || ''
-  // const category = getCategoryById(categoryId)
-  // console.log('category', category)
+export default async function Category ({ categorySlug }: CategoryProps) {
+  const category = await getCategoryBySlug(decodeURI(categorySlug))
+  const videosInCategory = category?.videos.items
+  if (!category || !videosInCategory) {
+    return <NotFound />
+  }
   return (
-            <div>
-              <h2>{name}</h2>
-                {videos.map((video) => (
-                  <p>
-                    {video.title}
-                  </p>
-                ))}
-            </div>
-
-  )
+    <>
+        <h2>Cat Name: {category.name}</h2>
+        {videosInCategory.map((video: Video) => (
+          <p>
+            <Link href={`/filmkatalog/${category.slug}/${video.slug}`}>{video.title}</Link>
+          </p>
+        ))}
+    </>
+   )
 }

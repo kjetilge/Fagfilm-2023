@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { thumb } from './thumbs';
+import { thumb } from '../thumbs';
 
 interface CategoryVideoProps {
   video: Video;

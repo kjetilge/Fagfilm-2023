@@ -2,13 +2,16 @@ import {Sha256} from '@aws-crypto/sha256-js';
 import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { HttpRequest } from '@smithy/protocol-http';
-import { CategoriesOnlyQuery } from './queries'
+import { CategoryBySlugQuery } from './queries'
+import { CategoriesQuery } from './queries'
+
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string
 
-export const getCategoriesOnly = async () => {
 
+const getCategoryBySlug = async (categorySlug: string) => {
+  const encodedSlug = encodeURIComponent(categorySlug);
   const endpoint = new URL(GRAPHQL_ENDPOINT);
 
   const signer = new SignatureV4({
@@ -18,6 +21,7 @@ export const getCategoriesOnly = async () => {
     sha256: Sha256
   });
 
+
   const requestToBeSigned = new HttpRequest({
     method: 'POST',
     headers: {
@@ -25,7 +29,10 @@ export const getCategoriesOnly = async () => {
       host: endpoint.host
     },
     hostname: endpoint.host,
-    body: JSON.stringify({ query: CategoriesOnlyQuery }), // Query string should be in the body
+    body: JSON.stringify({
+      query: CategoryBySlugQuery,
+      variables: {slug: categorySlug}
+    }), // Query string should be in the body
     path: endpoint.pathname
   });
 
@@ -37,8 +44,10 @@ export const getCategoriesOnly = async () => {
   let response;
 
   try {
+    // console.log('request', request)
     response = await fetch(request);
     body = await response.json();
+    // console.log('body length: ',body.data?.listCategorys.items.length)
     if (body.errors) statusCode = 400;
   } catch (error) {
     statusCode = 500;
@@ -50,6 +59,8 @@ export const getCategoriesOnly = async () => {
       ]
     };
   }
-  const categories = body.data.listCategorys.items
-  return categories
+  const category = body.data?.listCategorys.items[0]
+  return category
 };
+
+export default getCategoryBySlug

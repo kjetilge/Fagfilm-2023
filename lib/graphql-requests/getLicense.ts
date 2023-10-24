@@ -2,7 +2,7 @@ import {Sha256} from '@aws-crypto/sha256-js';
 import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { HttpRequest } from '@smithy/protocol-http';
-import { CategoriesQuery } from './queries'
+import { CategoriesQuery } from '@/lib/graphql-requests/queries'
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string

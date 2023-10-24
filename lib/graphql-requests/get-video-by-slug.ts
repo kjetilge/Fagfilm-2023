@@ -2,15 +2,15 @@ import {Sha256} from '@aws-crypto/sha256-js';
 import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { HttpRequest } from '@smithy/protocol-http';
-import { CategoryBySlugQuery } from './queries'
-import { CategoriesQuery } from './queries'
+import { VideoBySlugQuery } from './queries'
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string
 
-const getCategoryBySlug = async ({ slug }: { slug: string}) => {
 
+const getVideoBySlug = async (videoSlug: string) => {
+  
   const endpoint = new URL(GRAPHQL_ENDPOINT);
 
   const signer = new SignatureV4({
@@ -20,7 +20,7 @@ const getCategoryBySlug = async ({ slug }: { slug: string}) => {
     sha256: Sha256
   });
 
-  console.log('slug arg: ', JSON.stringify(slug))
+  // console.log('slug arg: ', JSON.stringify(categorySlug))
 
   const requestToBeSigned = new HttpRequest({
     method: 'POST',
@@ -30,8 +30,8 @@ const getCategoryBySlug = async ({ slug }: { slug: string}) => {
     },
     hostname: endpoint.host,
     body: JSON.stringify({
-      query: CategoryBySlugQuery,
-      variables: slug
+      query: VideoBySlugQuery,
+      variables: {slug: videoSlug}
     }), // Query string should be in the body
     path: endpoint.pathname
   });
@@ -44,9 +44,10 @@ const getCategoryBySlug = async ({ slug }: { slug: string}) => {
   let response;
 
   try {
+    // console.log('request', request)
     response = await fetch(request);
     body = await response.json();
-    console.log('body: ',JSON.stringify(body))
+    console.log('body length: ',body.data?.listVideos.items.length)
     if (body.errors) statusCode = 400;
   } catch (error) {
     statusCode = 500;
@@ -58,10 +59,10 @@ const getCategoryBySlug = async ({ slug }: { slug: string}) => {
       ]
     };
   }
-
-  const category = body.data?.listCategorys.items[0]
-  // console.log('categoryz: ',category)
-  return category
+  // console.log('body.data?: ', await body.data?.listCategorys.items[0])
+  const video = body.data?.listVideos.items[0]
+  console.log('VIDEO req: ', video)
+  return video
 };
 
-export default getCategoryBySlug
+export default getVideoBySlug
