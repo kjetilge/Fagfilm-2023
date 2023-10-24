@@ -31,7 +31,7 @@ async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
   if (categorySlug && videoSlug) {
     return <>
     <h1>categorySlug {categorySlug}, videoSlug {videoSlug}</h1>
-    <Video categorySlug= {categorySlug} videoSlug={videoSlug} />
+    <Video videoSlug={videoSlug} />
     </>
   }
 

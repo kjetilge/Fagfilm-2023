@@ -9,8 +9,8 @@ const CategoryNav = ({categories}: CategoryNavProps) => {
   return (
     <nav>
       <ul>
-        {categories.map((category: Category) => (
-          <li>
+        {categories.map((category: Category, index: number) => (
+          <li key={index}>
             <a href={`/filmer/filmkatalog/${category.slug}`}>{category.name}</a>
           </li>
         ))}

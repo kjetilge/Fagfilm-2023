@@ -20,7 +20,7 @@ export default async function Categories () {
             </Link>
             <div>
                 {videos.map((video, key) => (
-                  <div key={`{key}`}>
+                  <div key={key}>
                     <Link href={`/filmkatalog/${category.slug}/${video.slug}`}>{video.title}</Link>
                     {/* {JSON.stringify(video)} */}
                   </div>
