@@ -19,8 +19,8 @@ export default async function Categories () {
               <h2>----------------{category.name}, {category.slug}</h2>
             </Link>
             <div>
-                {videos.map((video) => (
-                  <div>
+                {videos.map((video, key) => (
+                  <div key={`{key}`}>
                     <Link href={`/filmkatalog/${category.slug}/${video.slug}`}>{video.title}</Link>
                     {/* {JSON.stringify(video)} */}
                   </div>
@@ -30,9 +30,5 @@ export default async function Categories () {
         );
       })}
     </ul>
-    // <p>
-    //   {typeof(categories) }
-    //   {JSON.stringify(categories)}
-    // </p>
   )
 }
