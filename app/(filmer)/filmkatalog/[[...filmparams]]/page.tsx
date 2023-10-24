@@ -2,7 +2,7 @@ import Catalog from '@/components/filmer/filmkatalog/catalog'
 
 export default async function CatalogPage ({ params }: { params: { filmparams: string[] } }) {
   const {filmparams = []} = params
-  console.log('filmparams', filmparams)
+  // console.log('filmparams', filmparams)
 
   let categorySlug: string | undefined, videoSlug
 
@@ -15,7 +15,7 @@ export default async function CatalogPage ({ params }: { params: { filmparams: s
     videoSlug  = undefined
   }
   if (filmparams.length === 2) {
-    console.log('filmparams[1]', filmparams[1]) 
+    // console.log('filmparams[1]', filmparams[1]) 
     categorySlug = decodeURI(params.filmparams[0])
     videoSlug  = decodeURI(params.filmparams[1])
   }
