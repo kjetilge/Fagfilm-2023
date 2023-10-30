@@ -61,7 +61,7 @@ const getVideoBySlug = async (videoSlug: string) => {
   }
   // console.log('body.data?: ', await body.data?.listCategorys.items[0])
   const video = body.data?.listVideos.items[0]
-  console.log('VIDEO req: ', video)
+  // console.log('VIDEO req: ', video)
   return video
 };
 

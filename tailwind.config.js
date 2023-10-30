@@ -8,6 +8,10 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        'aspect-max14/12': { 'raw': '(max-aspect-ratio: 14/12)' },
+        'aspect-min14/12': { 'raw': '(min-aspect-ratio: 14/12)' },
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -63,9 +67,24 @@ module.exports = {
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
+    require('tailwindcss-animate'),
+    require('@tailwindcss/container-queries'),
+    require('@vidstack/react/tailwind.cjs')({
+      prefix: 'media',
+    }),
+    require('tailwind-scrollbar'),
+    customVariants,
     plugin(({ addVariant }) => {
       addVariant("radix-side-top", '&[data-side="top"]');
       addVariant("radix-side-bottom", '&[data-side="bottom"]');
     }),
   ],
 };
+
+function customVariants({ addVariant, matchVariant }) {
+  // Strict version of `.group` to help with nesting.
+  matchVariant('parent-data', (value) => `.parent[data-${value}] > &`);
+
+  addVariant('hocus', ['&:hover', '&:focus-visible']);
+  addVariant('group-hocus', ['.group:hover &', '.group:focus-visible &']);
+}

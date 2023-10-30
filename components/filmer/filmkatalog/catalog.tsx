@@ -1,21 +1,30 @@
-import CategoryNav from './category-nav'
+import CategoryNav from './category/category-nav'
 import { getCategories } from '@/lib/graphql-requests/get-categories'
-import Categories from './categories'
-import Category from './category'
+import Categories from './categories/categories'
+import Category from './category/category'
 import NotFound from '@/components/shared/not-found'
-import Video from './video'
+import Video from './video-viewer/viewer'
+import Link from 'next/link'
+
+import Player from './video-viewer/video-player/player'
+// const root = document.getElementById('player')!;
 
 type CatalogProps = {
   categorySlug: string | undefined;
   videoSlug: string | undefined;
 }
 
+function TilbakeTilKatalog() {
+  return (
+    <Link href="/filmkatalog" className="font-semibold text-indigo-700">&#8592; Tilbake til katalog</Link>
+  )
+}
+
 async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
   // Show all videos in all categories
-  console.log('SLUGS', { categorySlug, videoSlug })
   if (!categorySlug && !videoSlug) {
     return <>
-    <h1>categorySlug {categorySlug}, videoSlug {videoSlug}</h1>
+    <TilbakeTilKatalog />
     <Categories />
     </>
   }
@@ -23,14 +32,14 @@ async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
   // // Show all videos in a single category
   if (categorySlug && !videoSlug) {
     return <>
-    <h1>categorySlug {categorySlug}, videoSlug {videoSlug}</h1>
+    <TilbakeTilKatalog />
     <Category categorySlug= {categorySlug} />
     </>
   }
   // Show a single video
   if (categorySlug && videoSlug) {
     return <>
-    <h1>categorySlug {categorySlug}, videoSlug {videoSlug}</h1>
+    {/* <TilbakeTilKatalog /> */}
     <Video videoSlug={videoSlug} />
     </>
   }

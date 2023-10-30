@@ -1,5 +1,4 @@
-import { type } from 'os'
-import React from 'react'
+import Link from 'next/link'
 
 type CategoryNavProps = {
   categories: Category[]
@@ -11,7 +10,9 @@ const CategoryNav = ({categories}: CategoryNavProps) => {
       <ul>
         {categories.map((category: Category, index: number) => (
           <li key={index}>
-            <a href={`/filmer/filmkatalog/${category.slug}`}>{category.name}</a>
+            <Link href={`/filmkatalog/${category.slug}`} className="font-semibold text-indigo-700">
+              {category.name}
+            </Link>
           </li>
         ))}
       </ul>

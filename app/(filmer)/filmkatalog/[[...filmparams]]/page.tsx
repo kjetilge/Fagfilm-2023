@@ -1,27 +1,27 @@
 import Catalog from '@/components/filmer/filmkatalog/catalog'
 
-export default async function CatalogPage ({ params }: { params: { filmparams: string[] } }) {
-  const {filmparams = []} = params
-  // console.log('filmparams', filmparams)
+export default function CatalogPage({ params }: { params: { filmparams: string[] } }) {
+  const { filmparams = [] } = params;
 
-  let categorySlug: string | undefined, videoSlug
+  let categorySlug: string | undefined;
+  let videoSlug: string | undefined;
 
-  if (filmparams.length === 0) {
-    categorySlug = undefined
-    videoSlug = undefined
-  }
-  if (filmparams.length === 1) {
-    categorySlug = decodeURI(params.filmparams[0])
-    videoSlug  = undefined
-  }
-  if (filmparams.length === 2) {
-    // console.log('filmparams[1]', filmparams[1]) 
-    categorySlug = decodeURI(params.filmparams[0])
-    videoSlug  = decodeURI(params.filmparams[1])
+  switch (filmparams.length) {
+    case 0:
+      categorySlug = undefined;
+      videoSlug = undefined;
+      break;
+    case 1:
+      categorySlug = decodeURI(filmparams[0]);
+      videoSlug = undefined;
+      break;
+    case 2:
+      categorySlug = decodeURI(filmparams[0]);
+      videoSlug = decodeURI(filmparams[1]);
+      break;
+    default:
+      throw new Error("Invalid number of filmparams");
   }
 
-  return (<Catalog categorySlug={categorySlug} videoSlug={videoSlug}/>)  
+  return <Catalog categorySlug={categorySlug} videoSlug={videoSlug} />;
 }
-
-
-

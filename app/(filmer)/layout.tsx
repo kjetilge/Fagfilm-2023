@@ -27,15 +27,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const classNames = cx(sfPro.variable, inter.variable)
-  console.log('classNames', classNames)
   return (
     <html lang="en">
       <body className={`${cx(sfPro.variable, inter.variable)}`}>
-        <main className="">
-          <p>{classNames}</p>
+        <main className="bg-neutral-900 text-slate-300 h-screen">
           {children}
-
         </main>
       </body>
     </html>

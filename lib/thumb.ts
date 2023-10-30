@@ -30,3 +30,5 @@ export const thumb = (fileName:String, time: number, width: string) => {
   const imageUrl = IMAGESERVER + 'SMPTE_' + SMTPu + ',w_' + width + '/' + fileName + '.jpg'
   return imageUrl
 }
+
+export default thumb

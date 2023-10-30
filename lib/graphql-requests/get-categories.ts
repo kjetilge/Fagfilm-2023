@@ -3,10 +3,17 @@ import { defaultProvider } from '@aws-sdk/credential-provider-node';
 import { SignatureV4 } from '@smithy/signature-v4';
 import { HttpRequest } from '@smithy/protocol-http';
 import { CategoriesQuery } from './queries'
+import { type } from 'os';
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string
 
+type Category = {
+  id: string
+  name: string
+  rank: number
+  slug: string
+}
 export const getCategories = async () => {
 
   const endpoint = new URL(GRAPHQL_ENDPOINT);
@@ -51,7 +58,9 @@ export const getCategories = async () => {
     };
   }
   const categories = body.data.listCategorys.items
-  return categories
+  const filteredCategories = categories.filter((category: Category) => category.name !== "Ikke valgt")
+  filteredCategories.sort((a:Category, b: Category) => a.rank - b.rank);
+  return filteredCategories
 };
 
 export default getCategories
