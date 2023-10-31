@@ -4,6 +4,8 @@ const Profil = () => {
   )
 }
 
+export default Profil
+
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 // import hasSkolekode from "@/lib/hasSkolekode";
