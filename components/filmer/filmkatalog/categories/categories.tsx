@@ -3,6 +3,7 @@ import Link from 'next/link'
 import CategoryItem from './category-item'
 
 export default async function Categories () {
+  // Dette burde virke
   const categories = await getCategories();
   
   return (
