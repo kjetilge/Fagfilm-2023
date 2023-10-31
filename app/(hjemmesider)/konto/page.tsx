@@ -1,3 +1,11 @@
+const Konto = () => {
+  return (
+    <div>Konto</div>
+  )
+}
+
+export default Konto
+
 // import React from 'react'
 // import { PrismaAdapter } from "@auth/prisma-adapter";
 // import prisma from "../../../lib/prisma"
