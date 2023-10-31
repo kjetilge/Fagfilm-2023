@@ -48,14 +48,15 @@ export const getCategories = async () => {
     body = await response.json();
     if (body.errors) statusCode = 400;
   } catch (error) {
-    statusCode = 500;
-    body = {
-      errors: [
-        {
-          message: JSON.stringify(error)
-        }
-      ]
-    };
+    // statusCode = 500;
+    // body = {
+    //   errors: [
+    //     {
+    //       message: JSON.stringify(error)
+    //     }
+    //   ]
+    // };
+    throw error;
   }
   const categories = body.data.listCategorys.items
   const filteredCategories = categories.filter((category: Category) => category.name !== "Ikke valgt")
