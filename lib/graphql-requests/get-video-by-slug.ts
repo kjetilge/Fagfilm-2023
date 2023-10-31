@@ -10,7 +10,10 @@ const AWS_REGION = process.env.AWS_REGION as string
 
 
 const getVideoBySlug = async (videoSlug: string) => {
-  
+  if (!videoSlug) {
+    throw new Error('Ugyldig video-url-navn');
+  }
+
   const endpoint = new URL(GRAPHQL_ENDPOINT);
 
   const signer = new SignatureV4({
