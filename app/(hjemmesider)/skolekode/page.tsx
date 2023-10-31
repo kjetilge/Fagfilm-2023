@@ -1,3 +1,11 @@
+const Skolekode = () => {
+  return (
+    <div>Skolekode</div>
+  ) 
+}
+
+export default Skolekode
+
 // a basic page with a headline
 // export default function Page() {
 //   return (

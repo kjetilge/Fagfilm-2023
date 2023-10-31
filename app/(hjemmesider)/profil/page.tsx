@@ -1,3 +1,9 @@
+const Profil = () => {
+  return (
+    <div>Profil</div>
+  )
+}
+
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 // import hasSkolekode from "@/lib/hasSkolekode";
