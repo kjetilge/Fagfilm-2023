@@ -51,7 +51,7 @@ function Player({ video }: PlayerProps) {
       // console.log('is paused?', '->', paused);
       // console.log('is audio view?', '->', viewType === 'audio');
     });
-  }, []);
+  }, [changeSource]);
 
   function onProviderChange(
     provider: MediaProviderAdapter | null,
@@ -69,13 +69,13 @@ function Player({ video }: PlayerProps) {
   }
 
   function changeSource(type: string) {
-    const muxPlaybackId = 'VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU';
+    // const muxPlaybackId = 'VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU';
     switch (type) {
       case 'video':
         setSrc(videoUrl.toString());
         break;
       case 'hls':
-        setSrc(`https://stream.mux.com/${muxPlaybackId}.m3u8`);
+        // setSrc(`https://stream.mux.com/${muxPlaybackId}.m3u8`);
         break;
     }
   }

@@ -19,8 +19,8 @@ export default async function Category ({ categorySlug }: CategoryProps) {
     <>
       <CategoryNav categories={categories}/>
       <h2 className="text-3xl">{category.name}</h2>
-      {videosInCategory.map((video: Video) => (
-        <p>
+      {videosInCategory.map((video: Video, index: number) => (
+        <p key={index}>
           <Link href={`/filmkatalog/${category.slug}/${video.slug}`}>{video.title}</Link>
         </p>
       ))}
