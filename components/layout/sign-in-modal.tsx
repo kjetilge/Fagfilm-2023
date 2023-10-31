@@ -35,9 +35,9 @@ const SignInModal = ({
             />
           </a>
           <h3 className="font-display text-2xl font-bold">Logg in</h3>
-          <p className="text-sm text-gray-500">
+          {/* <p className="text-sm text-gray-500">
             Hvis du har fått en skolekode skal du bruke epostinnlogging.
-          </p>
+          </p> */}
         </div>
 
 
@@ -64,7 +64,9 @@ const SignInModal = ({
               </>
             )}
           </button>
-          <div className="flex h-10 w-full items-center justify-center"><h3>Eller med epost</h3></div>
+
+
+          {/* <div className="flex h-10 w-full items-center justify-center"><h3>Eller med epost</h3></div>
 
           <div className="flex flex-col space-y-2">
             <label htmlFor="email" className="text-sm text-gray-500">
@@ -99,7 +101,10 @@ const SignInModal = ({
                 <p>Logg inn med epost</p>
               </>
             )}
-          </button>
+          </button> */}
+
+
+
         </div>
       </div>
     </Modal>
