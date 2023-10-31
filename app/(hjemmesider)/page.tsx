@@ -6,14 +6,14 @@ import { Github, Twitter } from "@/components/shared/icons";
 // import ComponentGrid from "@/components/hjemmesider/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
-// import getVideoBySlug from "@/lib/graphql-requests/get-video-by-slug";
+import getVideoBySlug from "@/lib/graphql-requests/get-video-by-slug";
 
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 const AWS_REGION = process.env.AWS_REGION as string
 
 export default async function Home() {
-  // const video = await getVideoBySlug('naturbruk')
+  const video = await getVideoBySlug('naturbruk')
   // const session = await getServerSession(authOptions)
   
   return (
@@ -30,7 +30,7 @@ export default async function Home() {
         </p>
 
         <p>
-          VIDEO funnet: TEST
+          VIDEO funnet: {video.title}
         </p>
 
         <p
