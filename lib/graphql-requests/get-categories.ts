@@ -58,6 +58,9 @@ export const getCategories = async () => {
     // };
     throw error;
   }
+  if (!body || !body.data) {
+    throw new Error('Failed to fetch categories');
+  }
   const categories = body.data.listCategorys.items
   const filteredCategories = categories.filter((category: Category) => category.name !== "Ikke valgt")
   filteredCategories.sort((a:Category, b: Category) => a.rank - b.rank);
