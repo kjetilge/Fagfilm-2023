@@ -51,7 +51,7 @@ function Player({ video }: PlayerProps) {
       // console.log('is paused?', '->', paused);
       // console.log('is audio view?', '->', viewType === 'audio');
     });
-  }, []);
+  }); //, []
 
   function onProviderChange(
     provider: MediaProviderAdapter | null,
