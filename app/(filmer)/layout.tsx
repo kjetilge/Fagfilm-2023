@@ -2,9 +2,9 @@ import "@/app/globals.css";
 // import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import { sfPro, inter } from "@/app/fonts";
-// import Nav from "@/components/layout/nav";
+import Nav from "@/components/layout/nav";
 // import Footer from "@/components/layout/footer";
-// import { Suspense } from "react";
+import { Suspense } from "react";
 
 
 // export const metadata = {
@@ -29,8 +29,13 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${cx(sfPro.variable, inter.variable)}`}>
-        <main className="bg-neutral-900 text-slate-300 h-screen">
+      <body className={`${cx(sfPro.variable, inter.variable)} bg-neutral-900`}>
+        <Suspense fallback="...">
+          {/* IKKE i bruk @ts-expect-error Server Component */}
+          <Nav />
+        </Suspense>
+
+        <main className=" text-slate-300">
           {children}
         </main>
       </body>

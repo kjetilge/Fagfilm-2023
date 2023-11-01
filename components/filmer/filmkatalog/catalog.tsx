@@ -14,17 +14,11 @@ type CatalogProps = {
   videoSlug: string | undefined;
 }
 
-function TilbakeTilKatalog() {
-  return (
-    <Link href="/filmkatalog" className="font-semibold text-indigo-700">&#8592; Tilbake til katalog</Link>
-  )
-}
 
 async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
   // Show all videos in all categories
   if (!categorySlug && !videoSlug) {
     return <>
-    <TilbakeTilKatalog />
     <Categories />
     </>
   }
@@ -32,14 +26,12 @@ async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
   // // Show all videos in a single category
   if (categorySlug && !videoSlug) {
     return <>
-    <TilbakeTilKatalog />
     <Category categorySlug= {categorySlug} />
     </>
   }
   // Show a single video
   if (categorySlug && videoSlug) {
     return <>
-    {/* <TilbakeTilKatalog /> */}
     <Video videoSlug={videoSlug} />
     </>
   }

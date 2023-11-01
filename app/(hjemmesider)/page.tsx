@@ -6,14 +6,9 @@ import { Github, Twitter } from "@/components/shared/icons";
 // import ComponentGrid from "@/components/hjemmesider/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
-import getVideoBySlug from "@/lib/graphql-requests/get-video-by-slug";
-
-const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
-const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
-const AWS_REGION = process.env.AWS_REGION as string
+import Link from "next/link";
 
 export default async function Home() {
-  const video = await getVideoBySlug('naturbruk')
   // const session = await getServerSession(authOptions)
   
   return (
@@ -25,23 +20,16 @@ export default async function Home() {
         >
           <Balancer>Fagfilm</Balancer>
         </h1>
-        <p>
-        GRAPHQL_ENDPOINT: {GRAPHQL_ENDPOINT}, GRAPHQL_API_KEY: {GRAPHQL_API_KEY}, AWS_REGION: {AWS_REGION}
-        </p>
-
-        <p>
-          VIDEO funnet: {video.title}
-        </p>
 
         <p
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
-            
           <Balancer>
             Her er utvikles fagfilm sin neste generasjon nettsted
           </Balancer>
         </p>
+        <Link href="/filmkatalog">Se film</Link>
 
       </div>
 

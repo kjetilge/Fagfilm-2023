@@ -11,6 +11,12 @@ video {
 }
 
 @layer utilities {
+  .filmer-layout-left-margin {
+    @apply pl-[calc(12px+1.6vw)];
+  }
+  .page-margins {
+    @apply mx-[calc(12px+1.6vw)]
+  }
   .h-scroll-chapters-nav {
     @apply overflow-x-auto h-full scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-gray-900;
   }

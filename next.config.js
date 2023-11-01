@@ -14,7 +14,7 @@ const nextConfig = {
     domains: ["lh3.googleusercontent.com", "vercel.com", "d1j2lkoxx8uycr.cloudfront.net"],
   },
   experimental: {
-    serverActions: true,
+    // serverActions: true,
     // useFormStatus: true,
   },
   async redirects() {

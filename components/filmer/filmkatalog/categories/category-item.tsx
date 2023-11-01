@@ -8,12 +8,15 @@ type CategoryProps = {
 const CategoryItem = ({category}: CategoryProps) => {
   const videoItems = category.videos.items
   return (
-    <>
-      <Link href={`/filmkatalog/${category.slug}`} className="text-3xl underline decoration-dashed hover:text-pink-500">
-        <h3>{category.name}</h3>
+    <div className="">
+      <Link href={`/filmkatalog/${category.slug}`} className="inline">
+        <h2 className="inline-block text-3xl hover:text-pink-500 pb-[0.9vw]">{category.name}</h2>
       </Link>
-      <VideoCarousel videoItems={videoItems} category={category}/>
-    </>
+
+      <div className="pb-[4vw]">
+        <VideoCarousel videoItems={videoItems} category={category}/>
+      </div>
+    </div>
   )
 }
 

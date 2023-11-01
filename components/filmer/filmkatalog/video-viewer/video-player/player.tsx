@@ -3,6 +3,8 @@
 import './player.css';
 
 import { useEffect, useRef, useState } from 'react';
+import { ArrowLeftIcon } from '@radix-ui/react-icons'
+// import BackButton from '@/components/shared/back-button';
 
 import {
   isHLSProvider,
@@ -81,6 +83,11 @@ function Player({ video }: PlayerProps) {
   }
   return (
     <>
+
+      {/* <BackButton className="absolute top-0 left-0 z-10 p-3 ml-4">
+        <ArrowLeftIcon className="h-10 w-10 text-white" />
+      </BackButton> */}
+
       <div className="flex flex-col h-screen">
         <main className="-mb-2">
           <MediaPlayer

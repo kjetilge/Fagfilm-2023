@@ -3,6 +3,7 @@ import getCategoryBySlug from '@/lib/graphql-requests/get-category-by-slug'
 import NotFound from '@/components/shared/not-found'
 import getCategoriesOnly from '@/lib/graphql-requests/get-categories-only'
 import CategoryNav from '@/components/filmer/filmkatalog/category/category-nav'
+import CategoryVideoItem from '@/components/filmer/filmkatalog/categories/video-item'
 
 type CategoryProps = {
   categorySlug: string;
@@ -16,14 +17,21 @@ export default async function Category ({ categorySlug }: CategoryProps) {
     return <NotFound />
   }
   return (
-    <>
-      <CategoryNav categories={categories}/>
-      <h2 className="text-3xl">{category.name}</h2>
-      {videosInCategory.map((video: Video, index: number) => (
-        <p key={index}>
-          <Link href={`/filmkatalog/${category.slug}/${video.slug}`}>{video.title}</Link>
-        </p>
-      ))}
-    </>
+    <div className="page-margins pt-[calc(70px+0.8vw)]">
+
+      <div className="flex justify-center">
+        <CategoryNav categories={categories}/>
+      </div>
+     
+      <h2 className="text-[3vw] mt-[3vw] mb-[3vw]">{category.name}</h2>
+
+      <div className="columns-3 gap-x-[0.8vw]">
+        {videosInCategory.map((video: Video, index: number) => (
+          <div className="mb-[0.8vw] relative">
+            <CategoryVideoItem video={video} categorySlug={category.slug}/>
+          </div>
+        ))}
+      </div>
+    </div>
    )
 }

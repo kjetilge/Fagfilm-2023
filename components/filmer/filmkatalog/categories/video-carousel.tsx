@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import styled from "styled-components";
+import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+
 // use this in stead https://github.com/YIZHUANG/react-multi-carousel
 // https://github.com/leandrowd/react-responsive-carousel
 
@@ -23,12 +25,34 @@ const VideoCarousel = ({videoItems, category}: VideoItemProps) => {
   return (
     <CarouselWrapper>
       <CarouselProvider
-      naturalSlideWidth={32}
-      naturalSlideHeight={23}
-      totalSlides={videoItems.length}
-      visibleSlides={5}
-      step={5}
+        className="relative"
+        naturalSlideWidth={16}
+        naturalSlideHeight={8}
+        totalSlides={videoItems.length}
+        visibleSlides={5.32}
+        step={5}
+        infinite={true}
       >
+        <div className="absolute top-0 z-10">
+          <ButtonBack>
+            <div className="relative h-full">
+              <ChevronLeftIcon className="h-10 w-10 text-white" />
+              <div className="bg-black opacity-0 hover:opacity-30 min-h-full">..</div>
+            </div>
+          </ButtonBack>
+        </div>
+
+        <ButtonNext className="absolute top-0 right-0 z-10 h-full opacity-10 hover:opacity-100">
+            <>
+              <div className="h-full w-16">
+                <div className="z-10 bg-black opacity-30 hover:opacity-60 h-full">
+                    <div>&nbsp;</div>
+                </div>
+              </div>
+              <ChevronRightIcon className="absolute z-10 top-[25%] pt-[0.5vw] right-0 h-16 w-16 text-white" />
+            </>
+        </ButtonNext>
+        
         <Slider className="">
           {videoItems.map((video, index) => {
               return (
@@ -39,8 +63,7 @@ const VideoCarousel = ({videoItems, category}: VideoItemProps) => {
             })
           }
         </Slider>
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
+
       </CarouselProvider>
     </CarouselWrapper>
   )
@@ -73,24 +96,8 @@ const CarouselWrapper = styled.div`
       max-width: 1344px;
     }
   }
-
-  /* This class is found in Slide from pure-react-carousel */
-  /* We need to override it to add space between slides */
   .carousel__inner-slide {
-    /* width: 100% - margin */
-    width: calc(100% - 16px);
-    /* margin-left: margin/2 */
-    /* margin is required to adjust positioning as the width is diminished*/
-    margin-left: 8px;
-
-    @media (min-width: 1272px) {
-      width: calc(100% - 24px);
-      margin-left: 12px;
-    }
-
-    @media (min-width: 1272px) {
-      width: calc(100% - 32px);
-      margin-left: 16px;
-    }
+    width: calc(100% - 0.4vw);
+    margin-left: 0.2vw;
   }
 `;

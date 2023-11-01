@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import thumb from '@/lib/thumb'
@@ -8,7 +7,7 @@ type VideoItemProps = {
   categorySlug: string
 }
 
-const VideoItem = ({video, categorySlug}: VideoItemProps) => {
+const CategoryVideoItem = ({video, categorySlug}: VideoItemProps) => {
   const thumbUrl = thumb(video.fileName, video.posterTime, '800')
   return (
     <div className="rounded-lg overflow-hidden">
@@ -36,6 +35,4 @@ const VideoItem = ({video, categorySlug}: VideoItemProps) => {
   )
 }
 
-export default VideoItem
-
-// fileName:String, time: number, width: string
+export default CategoryVideoItem

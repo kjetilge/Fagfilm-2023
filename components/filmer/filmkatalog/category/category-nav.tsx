@@ -7,10 +7,10 @@ type CategoryNavProps = {
 const CategoryNav = ({categories}: CategoryNavProps) => {
   return (
     <nav>
-      <ul>
+      <ul className="flex space-x-6">
         {categories.map((category: Category, index: number) => (
-          <li key={index}>
-            <Link href={`/filmkatalog/${category.slug}`} className="font-semibold text-indigo-700">
+          <li key={index} className="inline">
+            <Link href={`/filmkatalog/${category.slug}`} className="font-thin text-white hover:text-gray-300">
               {category.name}
             </Link>
           </li>
