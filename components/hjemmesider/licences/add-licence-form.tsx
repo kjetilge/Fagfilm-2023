@@ -1,7 +1,7 @@
 'use client'
 // @ts-ignore
-import { experimental_useFormState as useFormState } from 'react-dom'
-import { experimental_useFormStatus as useFormStatus } from 'react-dom'
+import { useFormState } from 'react-dom'
+// import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import { createLicence } from './actions'
 import SubmitButton from './submit-button'
 import { useRef } from "react";
@@ -12,7 +12,7 @@ const initialState = {
 
 export default function AddLicenceForm() {
   const [state, formAction] = useFormState(createLicence, initialState)
-  const { pending } = useFormStatus()
+  // const { pending } = useFormStatus()
   const ref = useRef<HTMLFormElement>(null);
 
   return (

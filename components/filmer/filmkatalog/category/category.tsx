@@ -27,7 +27,7 @@ export default async function Category ({ categorySlug }: CategoryProps) {
 
       <div className="columns-3 gap-x-[0.8vw]">
         {videosInCategory.map((video: Video, index: number) => (
-          <div className="mb-[0.8vw] relative">
+          <div className="mb-[0.8vw] relative" key={index}>
             <CategoryVideoItem video={video} categorySlug={category.slug}/>
           </div>
         ))}
