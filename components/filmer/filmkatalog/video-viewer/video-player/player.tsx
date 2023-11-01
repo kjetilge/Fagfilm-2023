@@ -87,9 +87,15 @@ function Player({ video }: PlayerProps) {
       {/* <BackButton className="absolute top-0 left-0 z-10 p-3 ml-4">
         <ArrowLeftIcon className="h-10 w-10 text-white" />
       </BackButton> */}
+{/* aspect-min20/12:flex-row */}
+      {/* on large aspects use flex-row and padding on top in the beginnening so that top nav is on dark background */}
+      {/* use aspect-min20/12:mt-[68px] only for a small aspect range in the switch between bottom and side chapters */}
+      <div className="flex flex-col aspect-max20/12:h-screen aspect-min20/12:flex-row">
 
-      <div className="flex flex-col h-screen">
-        <main className="-mb-2">
+        {/* the player gets win height when win aspect > 20/12   -mb-2 overflow-hidden aspect-min20/12:player-size-from-wh */}
+        {/* bruk leading-[0rem]  for å fjerne space mellom player og nav. -mb-1.5 har ikke effekt ? */}
+        
+        <main className="leading-[0rem] flex-none aspect-max20/12: aspect-min20/12:player-size-from-wh aspect-min20/12:flex-none aspect-min20/12:overflow-hidden"> 
           <MediaPlayer
             aspectRatio="16/9"
             className="player"
@@ -118,7 +124,9 @@ function Player({ video }: PlayerProps) {
             />
           </MediaPlayer>
         </main>
+        {/*  */}
         <Chapters video={video} player={player}/>
+        {/* <div className="h-40 w-10 bg-red-400">K</div> */}
       </div>
     </>
   );

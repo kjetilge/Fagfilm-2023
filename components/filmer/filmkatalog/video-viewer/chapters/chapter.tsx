@@ -27,11 +27,11 @@ const Chapter = ({ video, chapter, player }: ChapterProps) => {
             sizes="100vw"
             width={480}
             height={270}
-            className="h-scroll-image"
+            className="scroller-image"
           />
 
-          <div className="h-scroll-chapter-title-div">
-            <h2 className="h-scroll-chapter-title-h2">
+          <div className="chapter-title-container">
+            <h2 className="chapter-title">
                 {chapter.title}
             </h2>
           </div>

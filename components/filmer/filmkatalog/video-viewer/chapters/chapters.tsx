@@ -11,59 +11,62 @@ type ChaptersProps = {
 }
 
 const chapters = ({video, player}: ChaptersProps) => {
-  // scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-gray-900
+
   const { fileName } = video
   const chapters = video.chapters.items
 
     function skipToChapter(_: any, start: number) {
-    player.current!.currentTime = start // chapter.posterTime
+    player.current!.currentTime = start
   }
-     //nav horizontal scroll overflow-x-auto h-full scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-gray-900
-    // ul horizontal scroll whitespace-nowrap h-full
+
   return (
     <>
+    {/* aspect media queriers are defined in tailwing.config.js */}
+    {/* on aspects larger than aspect-min20/12 swith to vertical scroller to the right of player */}
 
-    {/* <nav className="aspect-min14/12:h-scroll-chapters-nav">
-      <ul className="aspect-min14/12:h-scroll-chapters-ul">
-        {chapters.map((chapter, index) => (
-          <li className="bg-red-700 aspect-min14/12:inline" key={index}>
-            <Chapter video={video} chapter={chapter} player={player}/>
-          </li>
-        ))}
-      </ul>
-    </nav> */}
-
-    <nav className="aspect-max14/12:v-scroll-chapters-nav    aspect-min14/12:h-scroll-chapters-nav">
-      <ul className="aspect-max14/12:v-scroll-chapters-ul   aspect-min14/12:h-scroll-chapters-ul">
+    {/* <nav className={`aspect-max14/12:v-scroll-chapters-nav  aspect-min14/12:h-scroll-chapters-nav`}>
+      <ul className="aspect-max14/12:v-scroll-chapters-ul aspect-min14/12:h-scroll-chapters-ul">
         {chapters.map((chapter, index) => (
           <li className="aspect-max14/12:v-scroll-chapters-li  aspect-min14/12:h-scroll-chapters-li" key="{index}">
             <Chapter video={video} chapter={chapter} player={player}/>
           </li>
         ))}
       </ul>
-    </nav>
+    </nav> */}
 
-    {/* <nav className="v-scroll-chapters-nav">
-      <ul className="v-scroll-chapters-ul">
+    {/* <div className="v-scroll-chapters-nav-right @container">
+      <p className="v-scroll-chapters-ul-right @[100px]:bg-red-200 bg-indigo-600">TEKS</p>
+      <ul className="v-scroll-chapters-ul-right">
         {chapters.map((chapter, index) => (
           <li className="v-scroll-chapters-li" key="{index}">
             <Chapter video={video} chapter={chapter} player={player}/>
           </li>
         ))}
       </ul>
-    </nav> */}
+    </div> */}
 
 
-    {/* <nav className="bg-slate-300 overflow-y-auto h-full w-screen">
-      <div className="columns-2">
-      {chapters.map((chapter, index) => (
-        <div className="aspect-video" key="{index}">
-          <Chapter video={video} chapter={chapter} player={player}/>
-        </div>
-      ))}
-      </div>
+      {/* @[400px]:columns-2 @[800px]:columns-3 */}
+      <ul className="h-scroll-chapters-ul ">
+        {chapters.map((chapter, index) => (
+          <li className="aspect-video inline-block h-full @container" key="{index}">
+            <Chapter video={video} chapter={chapter} player={player}/>
+          </li>
+        ))}
+      </ul>
+
+
+    {/* working right side chapter nav */}
+    {/* @[400px]:columns-2 @[800px]:columns-3 */}
+    {/* <nav className="chapters-nav-r @container">
+      <ul className="">
+        {chapters.map((chapter, index) => (
+          <li className="aspect-video" key="{index}">
+            <Chapter video={video} chapter={chapter} player={player}/>
+          </li>
+        ))}
+      </ul>
     </nav> */}
-    
 
   </>
   )

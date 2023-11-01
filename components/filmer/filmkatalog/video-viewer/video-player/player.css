@@ -14,6 +14,7 @@
   --video-focus-ring-color: var(--focus-color);
   --video-border-radius: 0px;
   --video-border: 0px
+
   /* 👉 https://vidstack.io/docs/player/components/layouts/default#css-variables for more. */
 }
 
@@ -22,9 +23,15 @@
 }
 
 .player[data-view-type='video'] {
-  aspect-ratio: 16 /9;
-
+  /* aspect-ratio: 16 /9; */
 }
+
+@media screen and (min-aspect-ratio: 20/12) {
+  .player {
+
+  }
+}
+
 
 .src-buttons {
   display: flex;
@@ -34,3 +41,14 @@
   margin-inline: auto;
   max-width: 300px;
 }
+
+/* .player {
+  container-name: media-player;
+  container-type: inline-size;
+}
+
+@container (inline-size < 576px) {
+  .controls {
+    background-color: red;
+  }
+} */
