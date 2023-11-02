@@ -9,12 +9,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'aspect-max14/12': { 'raw': '(max-aspect-ratio: 14/12)' },
+        'low-aspect': { 'raw': '(max-aspect-ratio: 14/12)' },
         'aspect-min14/12': { 'raw': '(min-aspect-ratio: 14/12)' },
         'aspect-max20/12': { 'raw': '(max-aspect-ratio: 20/12)' }, // stop the styles from low aspect ratio
         'aspect-min20/12': { 'raw': '(min-aspect-ratio: 20/12)' }, // move to right side. Switch to flex-row
         'h-scroll-aspects': { 'raw': '(min-aspect-ratio: 14/12) and (max-aspect-ratio: 20/12)' },
         'tablet-aspects': { 'raw': '(min-aspect-ratio: 20/12) and (max-aspect-ratio: 21/12)' },
+        'wide-desktop-aspects': { 'raw': '(min-aspect-ratio: 21/12)' },
 
       },
       containers: {

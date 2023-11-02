@@ -46,14 +46,16 @@ const chapters = ({video, player}: ChaptersProps) => {
     </div> */}
 
 
-      {/* @[400px]:columns-2 @[800px]:columns-3 */}
-      <ul className="h-scroll-chapters-ul ">
-        {chapters.map((chapter, index) => (
-          <li className="aspect-video inline-block h-full @container" key="{index}">
-            <Chapter video={video} chapter={chapter} player={player}/>
-          </li>
-        ))}
-      </ul>
+    {/* @[400px]:columns-2 @[800px]:columns-3 */}
+    {/* leading-[0rem] to avoid space under ul*/}
+    {/* Working h scroller */}
+    {/* <ul className="h-scroll-chapters-ul leading-[0rem]">
+      {chapters.map((chapter, index) => (
+        <li className="aspect-video inline-block h-full @container" key="{index}">
+          <Chapter video={video} chapter={chapter} player={player}/>
+        </li>
+      ))}
+    </ul> */}
 
 
     {/* working right side chapter nav */}
@@ -67,6 +69,18 @@ const chapters = ({video, player}: ChaptersProps) => {
         ))}
       </ul>
     </nav> */}
+
+    {/* Combine h and v scroll under player */}
+      <ul className="bg-yellow-700 h-scroll-aspects:h-scroll-chapters-ul leading-[0rem] @container">
+        <div className="h-full low-aspect:">
+          {chapters.map((chapter, index) => (
+            <li className="low-aspect:v-scroll-chapters-li low-aspect:columns-2
+                           h-scroll-aspects:h-scroll-li" key="{index}">
+              <Chapter video={video} chapter={chapter} player={player}/>
+            </li>
+          ))}
+        </div>
+      </ul>
 
   </>
   )

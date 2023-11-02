@@ -90,7 +90,7 @@ function Player({ video }: PlayerProps) {
 {/* aspect-min20/12:flex-row */}
       {/* on large aspects use flex-row and padding on top in the beginnening so that top nav is on dark background */}
       {/* use aspect-min20/12:mt-[68px] only for a small aspect range in the switch between bottom and side chapters */}
-      <div className="flex flex-col aspect-max20/12:h-screen aspect-min20/12:flex-row">
+      <div className="flex flex-col h-screen wide-desktop-aspects:flex-row">
 
         {/* the player gets win height when win aspect > 20/12   -mb-2 overflow-hidden aspect-min20/12:player-size-from-wh */}
         {/* bruk leading-[0rem]  for å fjerne space mellom player og nav. -mb-1.5 har ikke effekt ? */}
