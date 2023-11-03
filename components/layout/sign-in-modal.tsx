@@ -7,7 +7,7 @@ import {
   useCallback,
   useMemo,
 } from "react";
-import { LoadingDots, Google } from "@/components/shared/icons";
+import { LoadingDots } from "@/components/shared/icons";
 import Image from "next/image";
 
 const SignInModal = ({
