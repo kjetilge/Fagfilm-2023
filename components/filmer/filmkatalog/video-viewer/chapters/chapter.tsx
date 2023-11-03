@@ -20,14 +20,14 @@ const Chapter = ({ video, chapter, player }: ChapterProps) => {
 
   return (
     <>
-      <button onClick={(event)=>skipToChapter(event, chapter.start)} className="h-scroll-chapter-button">
+      <button onClick={(event)=>skipToChapter(event, chapter.start)} className="relative h-full">
           <Image
             src={thumb(fileName, chapter.posterTime, '600')}
             alt="Illustrasjonbilde til videoen"
             sizes="100vw"
             width={480}
             height={270}
-            className="scroller-image"
+            className="w-auto h-full inline"
           />
 
           <div className="chapter-title-container">

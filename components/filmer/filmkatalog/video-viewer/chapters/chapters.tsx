@@ -9,15 +9,19 @@ type ChaptersProps = {
   video: Video,
   player: RefObject<MediaPlayerInstance>
 }
+type ChapterDisplayProps = {
+  chapters: Chapter[]
+}
 
 const chapters = ({video, player}: ChaptersProps) => {
 
   const { fileName } = video
   const chapters = video.chapters.items
 
-    function skipToChapter(_: any, start: number) {
+  function skipToChapter(_: any, start: number) {
     player.current!.currentTime = start
   }
+
 
   return (
     <>
@@ -49,6 +53,7 @@ const chapters = ({video, player}: ChaptersProps) => {
     {/* @[400px]:columns-2 @[800px]:columns-3 */}
     {/* leading-[0rem] to avoid space under ul*/}
     {/* Working h scroller */}
+
     {/* <ul className="h-scroll-chapters-ul leading-[0rem]">
       {chapters.map((chapter, index) => (
         <li className="aspect-video inline-block h-full @container" key="{index}">
@@ -71,16 +76,17 @@ const chapters = ({video, player}: ChaptersProps) => {
     </nav> */}
 
     {/* Combine h and v scroll under player */}
-      <ul className="bg-yellow-700 h-scroll-aspects:h-scroll-chapters-ul leading-[0rem] @container">
-        <div className="h-full low-aspect:">
-          {chapters.map((chapter, index) => (
-            <li className="low-aspect:v-scroll-chapters-li low-aspect:columns-2
-                           h-scroll-aspects:h-scroll-li" key="{index}">
-              <Chapter video={video} chapter={chapter} player={player}/>
-            </li>
-          ))}
+
+    <div className="grid grid-cols-3 gap-1 overflow-y-auto w-full bg-sky-700">
+      {chapters.map((chapter, index) => (
+        <div className="" key="{index}">
+          <div className="bg-slate-400 w-1920 h-1280 aspect-video">
+            <Chapter video={video} chapter={chapter} player={player}/>
+          </div>
         </div>
-      </ul>
+      ))}
+    </div>
+
 
   </>
   )

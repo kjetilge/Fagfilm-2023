@@ -21,8 +21,18 @@ video {
   .page-margins {
     @apply mx-[calc(12px+1.6vw)]
   }
+
+  .chapter-title-container {
+    /* Here the @container class is used to make the text responsive */
+    @apply flex items-center absolute bottom-0 bg-black bg-opacity-50 w-full h-2/5 align-text-bottom flexi-text @container;
+  }
+  .chapter-title {
+    @apply leading-none ml-2 text-white whitespace-normal text-xs @[11rem]:text-sm  @[13rem]:text-base @[15rem]:text-lg @[17rem]:text-xl @[19rem]:text-2xl @[21rem]:text-3xl @[23rem]:text-4xl;
+  }
+
   /* special classes for horizontal and vertical chapter scrollers */
-  .h-scroll-chapters-nav {
+  
+  /* .h-scroll-chapters-nav {
     @apply overflow-x-auto h-full scrollbar-thin scrollbar-thumb-rose-600 scrollbar-track-gray-900;
   }
 
@@ -39,26 +49,10 @@ video {
 
 
   .h-scroll-chapter-button {
-    @apply relative w-full aspect-video
-  }
-  .chapter-title-container {
-    /* Here the @container class is used to make the text responsive */
-    @apply flex items-center absolute bottom-0 bg-black bg-opacity-50 w-full h-2/5 align-text-bottom flexi-text @container;
-  }
-  .chapter-title {
-    @apply leading-none ml-2 text-white whitespace-normal text-xs @[11rem]:text-sm  @[13rem]:text-base @[15rem]:text-lg @[17rem]:text-xl @[19rem]:text-2xl @[21rem]:text-3xl @[23rem]:text-4xl;
-  }
-  /* must use scroller-image b/c Image component only accepts a class name for it's container */
-  .scroller-image {
-    @apply w-auto h-full inline;
-  }
+    @apply relative h-full aspect-video max-w-full
+  } */
 
-  .v-scroll-chapters-li {
-    @apply aspect-video inline-block ;
-  }
-  .low-aspect-div {
-    @apply overflow-y-auto ;
-  }
+  /* must use scroller-image b/c Image component only accepts a class name for it's container */
   
 /* 
   .v-scroll-ul {
