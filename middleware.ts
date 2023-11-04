@@ -1,5 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server'
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 import { getServerSession } from "next-auth"
 
 // This function can be marked `async` if using `await` inside

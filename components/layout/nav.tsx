@@ -1,6 +1,6 @@
 import Navbar from "./navbar";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options";
 
 export default async function Nav() {
   const session = await getServerSession(authOptions);

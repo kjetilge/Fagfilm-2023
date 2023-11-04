@@ -1,7 +1,7 @@
 import { Licence } from '@prisma/client';
 import prisma from "@/lib/prisma";
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
+import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options"
 import { PrismaClient } from "@prisma/client";
 
 export const getLicenceInfo = async (): Promise<LicenceInfo> => {

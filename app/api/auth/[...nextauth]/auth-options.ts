@@ -12,19 +12,8 @@ const FEIDE_API_BASE_URL = 'https://auth.dataporten.no';
 
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  // adapter: PrismaAdapter(prisma),
   providers: [
-    /* https://github.com/nextauthjs/next-auth/discussions/8487#discussioncomment-6948757 Her er også OIDC svar og experimental */
-    // {
-    //   id: "email",
-    //   type: "email",
-    //   name: "Email",
-    //   from: "",
-    //   server: "",
-    //   maxAge: 60 * 10,
-    //   options: {},
-    //   async sendVerificationRequest() { },
-    // },
     {
       id: "feide",
       name: "Feide",
@@ -58,39 +47,17 @@ export const authOptions: NextAuthOptions = {
     // })
   ],
   callbacks: {
-    async session({ session, token, user }) {
-      // console.log(JSON.stringify(session, null, 2))
-      // console.log("TOKEN", JSON.stringify(token, null, 2))
-      // console.log("user", JSON.stringify(user, null, 2))
-      let skolekode
-      let isFeideUser, canView = false
-
-      if(session.user?.email) {
-        const foundUser = await getUser(session.user.email)
-        const userId = foundUser?.id
-        // console.log('userId', userId)
-        // console.log('foundUser', foundUser)
-        skolekode = "heisann-12345"//foundUser?.skolekode
-      }
-      // console.log('NY SESSION',JSON.stringify(session, null, 2))
-      return {  ...session, skolekode }
-    },
-    async signIn({ user, account, profile, email, credentials }) {
-      const isAllowedToSignIn = true
-      if (isAllowedToSignIn) {
+    callbacks: {
+      async signIn({ user, account, profile, email, credentials }) {
+        console.log("signIn", { user, account, profile, email, credentials })
         return true
-      } else {
-        // Return false to display a default error message
-        return false
-        // Or you can return a URL to redirect to:
-        // return '/unauthorized'
       }
     }
   },
   events: {
-    // updateUser: async (message) => {  
-    //   console.log("updateUser", message)
-    // },
+    updateUser: async (message) => {  
+      console.log("updateUser", message)
+    },
     // signOut: async (message) => {
     //   console.log("signOut", message)
     // },
@@ -98,7 +65,7 @@ export const authOptions: NextAuthOptions = {
     //   console.log("createUser", message)
     // },
     signIn: async (message) => {
-      // console.log("signIn EVENT")
+      console.log("signIn EVENT: ", message)
     }
   },
 };
