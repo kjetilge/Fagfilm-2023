@@ -5,7 +5,8 @@ import { sfPro, inter } from "@/app/fonts";
 import Nav from "@/components/layout/nav";
 // import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
-
+import Head from 'next/head';
+import favicon from '@/app/favicon.ico'
 
 // export const metadata = {
 //   title: "Fagfilm",
@@ -28,7 +29,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="no_NB">
+      {/* <Head>
+        <link rel="icon" href={favicon.src} sizes="any" />
+        <title>Fagfilm</title>
+      </Head>  */}
       <body className={`${cx(sfPro.variable, inter.variable)} bg-neutral-900`}>
         <Suspense fallback="...">
           {/* IKKE i bruk @ts-expect-error Server Component */}

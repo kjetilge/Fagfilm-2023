@@ -8,12 +8,12 @@ import { redirect } from 'next/navigation'
 
 const IkkeLoggetInn = async () => {
 
-  const session = await getServerSession(authOptions)
+  // const session = await getServerSession(authOptions)
 
-  if (session) {
-   //  return <IkkeLoggetInn />
-   redirect("/filmkatalog")
-  }
+  // if (session) {
+  //  //  return <IkkeLoggetInn />
+  //  redirect("/filmkatalog")
+  // }
 
   return (
     <div className="mx-9">
