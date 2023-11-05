@@ -38,4 +38,7 @@ export const authOptions: NextAuthOptions = {
       },
     }
   ],
+  callbacks: {
+    // signIn - godjkenn alle feidebrukere men skolekodebrukere til skolekode siden dersom de ikke har godkjent skolekode
+  }
 }
