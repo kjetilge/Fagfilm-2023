@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import getCategoryBySlug from '@/lib/graphql-requests/get-category-by-slug-old'
+import getCategoryBySlug from '@/lib/graphql-requests/get-category-by-slug'
 import NotFound from '@/components/shared/not-found'
-import getCategoriesOnly from '@/lib/graphql-requests/get-categories-only-old'
+import getCategoriesOnly from '@/lib/graphql-requests/get-categories-only'
 import CategoryNav from '@/components/filmer/filmkatalog/category/category-nav'
 import CategoryVideoItem from '@/components/filmer/filmkatalog/categories/video-item'
 

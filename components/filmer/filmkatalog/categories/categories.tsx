@@ -1,4 +1,4 @@
-import { getCategories } from '@/lib/graphql-requests/get-categories'
+import getCategories from '@/lib/graphql-requests/get-categories'
 import Link from 'next/link'
 import CategoryItem from './category-item'
 import CategoryDropdown from './category-dropdown'
