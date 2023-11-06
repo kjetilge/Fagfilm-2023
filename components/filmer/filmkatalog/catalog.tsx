@@ -1,5 +1,5 @@
 import CategoryNav from './category/category-nav'
-import { getCategories } from '@/lib/graphql-requests/get-categories'
+import getCategories from '@/lib/graphql-requests/get-categories'
 import Categories from './categories/categories'
 import Category from './category/category'
 import NotFound from '@/components/shared/not-found'
