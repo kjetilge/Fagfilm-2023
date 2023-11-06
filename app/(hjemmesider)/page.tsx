@@ -12,30 +12,20 @@ export default async function Home() {
   // const session = await getServerSession(authOptions)
   
   return (
-    <>
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-
-
-
-        <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
-          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-        >
-          <Balancer>Fagfilm</Balancer>
-        </h1>
-
-        <p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
-          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-        >
-          <Balancer>
-            Her er utvikles fagfilm sin neste generasjon nettsted
-          </Balancer>
-        </p>
-        <Link href="/filmkatalog">Se film</Link>
-
+    <div className="bg-cover bg-center h-screen w-full absolute b-0" style={{ backgroundImage: 'url(/front-image.jpg)' }}>
+      <div className="absolute bottom-0 w-full mt-auto bg-gradient-to-t from-black/80 from-50% pb-24 pt-32">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center pb-10">Utdanningsvalg på film</h1>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl  xl:lg:text-5xl text-center px-8">OPPLEV OG UTFORSK UTDANNINGS OG YRKESMULIGHETER</h2>
+        <div className="flex justify-center w-full">
+          <div className="flex flex-col justify-between h-56 md:h-12 md:flex-row md:justify-around my-12 md:w-[800px]">
+            <Link href="/bestill" className="bg-green-500 text-white py-3 px-4 w-44  rounded md:mb-0 text-center">BESTILL FAGFILM</Link>
+            <Link href="/bruker" className="bg-blue-500 text-white py-3 px-4 w-44 rounded md:mb-0  text-center">BLI BRUKER</Link>
+            <Link href="/filmkatalog" className="bg-red-500 text-white py-3 px-4 w-44 rounded  md:mb-0 text-center">SE FILM</Link>
+            <Link href="/personvern" className="bg-gray-500 text-white py-3 px-4 w-44 rounded md:mb-0 text-center">PERSONVERN</Link>
+          </div>
+        </div>
+        <p className="text-center text-sm md:text-base">Support: Send sms eller ring 915 68 963</p>
       </div>
-
-    </>
+    </div>
   );
 }

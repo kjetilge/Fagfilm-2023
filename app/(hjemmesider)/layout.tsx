@@ -44,11 +44,10 @@ export default async function RootLayout({
           {/* IKKE i bruk @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-        <main className="min-h-screen w-full flex-col items-center justify-center py-32">
+        <main className="">
           {children}
           
         </main>
-        <Footer />
         {/* <Analytics /> */}
         </Theme>
       </body>

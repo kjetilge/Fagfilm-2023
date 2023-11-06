@@ -40,7 +40,7 @@ export default async function RootLayout({
           <Nav />
         </Suspense>
 
-        <main className=" text-slate-300">
+        <main className="">
           {children}
         </main>
       </body>
