@@ -78,6 +78,7 @@ module.exports = {
     require("@tailwindcss/typography"),
     require('tailwindcss-animate'),
     require('@tailwindcss/container-queries'),
+    require('@tailwindcss/typography'),
     // require('@vidstack/react/tailwind.cjs')({
     //   prefix: 'media',
     // }),

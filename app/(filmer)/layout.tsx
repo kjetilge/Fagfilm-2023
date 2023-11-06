@@ -8,20 +8,20 @@ import { Suspense } from "react";
 import Head from 'next/head';
 import favicon from '@/app/favicon.ico'
 
-// export const metadata = {
-//   title: "Fagfilm",
-//   description:
-//     "Fagfilm gir deg filmer om videregående utdanning og yrkesvalg.",
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
-//     description:
-//       "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
-//     creator: "@fagfilm",
-//   },
-//   metadataBase: new URL("https://fagfilm.dev"),
-//   themeColor: "#FFF",
-// };
+export const metadata = {
+  title: "Fagfilm",
+  description:
+    "Fagfilm gir deg filmer om videregående utdanning og yrkesvalg.",
+  twitter: {
+    card: "summary_large_image",
+    title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
+    description:
+      "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
+    creator: "@fagfilm",
+  },
+  metadataBase: new URL("https://beta.fagfilm.no"),
+  themeColor: "#FFF",
+};
 
 export default async function RootLayout({
   children,

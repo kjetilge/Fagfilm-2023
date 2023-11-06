@@ -7,20 +7,22 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 import Head from 'next/head';
 import favicon from '@/app/favicon.ico'
-// export const metadata = {
-//   title: "Fagfilm",
-//   description:
-//     "Fagfilm git deg filmer om videregående utdanning og yrkesvalg.",
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
-//     description:
-//       "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
-//     creator: "@fagfilm",
-//   },
-//   metadataBase: new URL("https://fagfilm.dev"),
-//   themeColor: "#FFF",
-// };
+import { Theme } from '@radix-ui/themes';
+
+export const metadata = {
+  title: "Fagfilm",
+  description:
+    "Fagfilm gir deg filmer om videregående utdanning og yrkesvalg.",
+  twitter: {
+    card: "summary_large_image",
+    title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
+    description:
+      "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
+    creator: "@fagfilm",
+  },
+  metadataBase: new URL("https://beta.fagfilm.no"),
+  themeColor: "#FFF",
+};
 
 export default async function RootLayout({
   children,
@@ -34,16 +36,18 @@ export default async function RootLayout({
         <title>Fagfilm</title>
       </Head>   */}
       <body className={`${cx(sfPro.variable, inter.variable)}`}>
+      <Theme>
         {/* <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" /> */}
         <Suspense fallback="...">
           {/* IKKE i bruk @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
+        <main className="min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
         </main>
         <Footer />
         {/* <Analytics /> */}
+        </Theme>
       </body>
     </html>
   );
