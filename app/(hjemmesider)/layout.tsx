@@ -9,20 +9,11 @@ import Head from 'next/head';
 import favicon from '@/app/favicon.ico'
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Fagfilm",
-  description:
-    "Fagfilm gir deg filmer om videregående utdanning og yrkesvalg.",
-  twitter: {
-    card: "summary_large_image",
-    title: "Fagfilm - Filmer om videregående utdanning og yrkesvalg",
-    description:
-      "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
-    creator: "@fagfilm",
-  },
-  metadataBase: new URL("https://beta.fagfilm.no")
-};
+}
 
 export default async function RootLayout({
   children,
