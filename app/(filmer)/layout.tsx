@@ -29,7 +29,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no_NB">
+    <html lang="no_NB" suppressHydrationWarning>
       {/* <Head>
         <link rel="icon" href={favicon.src} sizes="any" />
         <title>Fagfilm</title>

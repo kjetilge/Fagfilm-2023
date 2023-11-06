@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import Head from 'next/head';
 import favicon from '@/app/favicon.ico'
 import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 
 export const metadata = {
   title: "Fagfilm",
@@ -30,13 +31,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no_NB">
+    <html lang="no_NB" suppressHydrationWarning>
       {/* <Head>
         <link rel="icon" href={favicon.src} sizes="any" />
         <title>Fagfilm</title>
       </Head>   */}
-      <body className={`${cx(sfPro.variable, inter.variable)}`}>
-      <Theme>
+      
+      <body className={`${cx(sfPro.variable, inter.variable)} dark`}>
+      <Theme appearance="dark">
         {/* <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" /> */}
         <Suspense fallback="...">
           {/* IKKE i bruk @ts-expect-error Server Component */}
@@ -44,11 +46,13 @@ export default async function RootLayout({
         </Suspense>
         <main className="min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
+          
         </main>
         <Footer />
         {/* <Analytics /> */}
         </Theme>
       </body>
+      
     </html>
   );
 }

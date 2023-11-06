@@ -7,13 +7,16 @@ import { Github, Twitter } from "@/components/shared/icons";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 import Link from "next/link";
-
+import { Flex, Text, Button } from '@radix-ui/themes';
 export default async function Home() {
   // const session = await getServerSession(authOptions)
   
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
+
+
+
         <h1
           className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
