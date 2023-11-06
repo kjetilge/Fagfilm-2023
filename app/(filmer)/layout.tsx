@@ -8,8 +8,19 @@ import { Suspense } from "react";
 import Head from 'next/head';
 import favicon from '@/app/favicon.ico'
 import { Metadata } from 'next'
+import { Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
+
+function getBaseUrl() {
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:3000';
+  } else {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+}
 
 export const metadata: Metadata = {
+  // metadataBase: new URL('https://beta.fagfilm.no'), //getBaseUrl()
   title: "Fagfilm",
 }
 
@@ -24,7 +35,8 @@ export default async function RootLayout({
         <link rel="icon" href={favicon.src} sizes="any" />
         <title>Fagfilm</title>
       </Head>  */}
-      <body className={`${cx(sfPro.variable, inter.variable)} bg-neutral-900`}>
+      <body className={`${cx(sfPro.variable, inter.variable)} dark`}>
+      <Theme appearance="dark">
         <Suspense fallback="...">
           {/* IKKE i bruk @ts-expect-error Server Component */}
           <Nav />
@@ -33,7 +45,9 @@ export default async function RootLayout({
         <main className="">
           {children}
         </main>
+        </Theme>
       </body>
+      
     </html>
   );
 }
