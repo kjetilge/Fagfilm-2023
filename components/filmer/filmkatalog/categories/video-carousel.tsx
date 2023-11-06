@@ -5,7 +5,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import styled from "styled-components";
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
-
+import useResponsiveSlides from '@/lib/hooks/use-responsive-slides'
 // use this in stead https://github.com/YIZHUANG/react-multi-carousel
 // https://github.com/leandrowd/react-responsive-carousel
 
@@ -21,7 +21,7 @@ type VideoItemProps = {
 }
 
 const VideoCarousel = ({videoItems, category}: VideoItemProps) => {
-
+  
   return (
     <CarouselWrapper>
       <CarouselProvider
@@ -29,8 +29,8 @@ const VideoCarousel = ({videoItems, category}: VideoItemProps) => {
         naturalSlideWidth={16}
         naturalSlideHeight={8}
         totalSlides={videoItems.length}
-        visibleSlides={5.32}
-        step={5}
+        visibleSlides={useResponsiveSlides() + 0.32}
+        step={4}
         infinite={true}
       >
         <div className="absolute top-0 z-10">

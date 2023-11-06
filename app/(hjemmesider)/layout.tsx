@@ -12,9 +12,9 @@ import '@radix-ui/themes/styles.css';
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  // metadataBase: new URL('https://beta.fagfilm.no'), //getBaseUrl()
   title: "Fagfilm",
 }
-
 export default async function RootLayout({
   children,
 }: {
