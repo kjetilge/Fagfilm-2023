@@ -1,5 +1,5 @@
 import NotFound from "@/components/shared/not-found";
-import getVideoBySlug from "@/lib/graphql-requests/get-video-by-slug";
+import getVideoBySlug from "@/lib/graphql-requests/get-video-by-slug-old";
 import { thumb }from '../../../../lib/thumb'
 import Player from './video-player/player';
 
