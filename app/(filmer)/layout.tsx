@@ -19,8 +19,7 @@ export const metadata = {
       "Fagfilm - Filmer om videregående utdanning og yrkesvalg.",
     creator: "@fagfilm",
   },
-  metadataBase: new URL("https://beta.fagfilm.no"),
-  themeColor: "#FFF",
+  metadataBase: new URL("https://beta.fagfilm.no")
 };
 
 export default async function RootLayout({
