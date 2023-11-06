@@ -30,7 +30,7 @@ const VideoItem = ({video, categorySlug}: VideoItemProps) => {
               &nbsp;
             </div>
           </div>
-          <h3 className="z-50 absolute left-[1vw] bottom-[0.7vw] text-[0.9vw] font-bold">{video.title}</h3>
+          <h3 className="z-50 absolute left-[1vw] bottom-[0.7vw] text-[0.9vw] font-bold text-white">{video.title}</h3>
       </Link>
     </div>
   )

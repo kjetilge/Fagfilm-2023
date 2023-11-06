@@ -12,7 +12,7 @@ export default async function Categories () {
     <>
     {/* <CategoryDropdown /> */}
     <ul className="pt-20 filmer-layout-left-margin">
-      <h1>Filmkatalog</h1>
+      <h1 className="text-white">Filmkatalog</h1>
       {categories.map((category: Category) => (
         <li key={category.id}>
           <CategoryItem category={category} />

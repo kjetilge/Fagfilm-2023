@@ -16,8 +16,8 @@ const IkkeLoggetInn = async () => {
   // }
 
   return (
-    <div className="mx-9">
-      <h1 className="text-4xl pb-3">
+    <div className="mt-20 mx-9 prose-invert prose-sm md:prose-lg lg:prose-xl">
+      <h1>
         Du er ikke logget inn
       </h1>
       <p>Du må være innlogget for å se fagfilm. Vi jobber med å implementere 

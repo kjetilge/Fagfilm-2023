@@ -23,7 +23,7 @@ export default async function Category ({ categorySlug }: CategoryProps) {
         <CategoryNav categories={categories}/>
       </div>
      
-      <h2 className="text-[3vw] mt-[3vw] mb-[3vw]">{category.name}</h2>
+      <h2 className="text-[3vw] mt-[3vw] mb-[3vw] text-white">{category.name}</h2>
 
       <div className="columns-3 gap-x-[0.8vw]">
         {videosInCategory.map((video: Video, index: number) => (

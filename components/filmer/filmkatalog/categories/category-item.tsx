@@ -10,7 +10,7 @@ const CategoryItem = ({category}: CategoryProps) => {
   return (
     <div className="">
       <Link href={`/filmkatalog/${category.slug}`} className="inline">
-        <h2 className="inline-block text-3xl hover:text-pink-500 pb-[0.9vw]">{category.name}</h2>
+        <h2 className="inline-block text-3xl hover:text-pink-500 pb-[0.9vw] text-white">{category.name}</h2>
       </Link>
 
       <div className="pb-[4vw]">
