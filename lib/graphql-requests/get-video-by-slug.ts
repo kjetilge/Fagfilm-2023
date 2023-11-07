@@ -6,6 +6,7 @@ const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 export default async  function getCategoryBySlug(videoSlug: string) {
   try {
     const response = await fetch(GRAPHQL_ENDPOINT, {
+      cache: 'force-cache',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -14,6 +14,7 @@ type Category = {
 export default async  function getCategoriesOnly() {
   try {
     const response = await fetch(GRAPHQL_ENDPOINT, {
+      cache: 'force-cache',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

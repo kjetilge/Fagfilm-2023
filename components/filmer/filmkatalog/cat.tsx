@@ -1,4 +1,4 @@
-// import CategoryNav from './category/category-nav'
+import CategoryNav from './category/category-nav'
 import getCategories from '@/lib/graphql-requests/get-categories'
 import Categories from './categories/categories'
 import Category from './category/category'
@@ -16,27 +16,9 @@ type CatalogProps = {
 
 
 async function Catalog({ categorySlug, videoSlug }: CatalogProps) {
-  // Show all videos in all categories
-  if (!categorySlug && !videoSlug) {
-    return <>
-    <Categories />
-    </>
-  }
 
-  // // Show all videos in a single category
-  if (categorySlug && !videoSlug) {
-    return <>
-    <Category categorySlug= {categorySlug} />
-    </>
-  }
-  // Show a single video
-  if (categorySlug && videoSlug) {
-    return <>
-    <Video videoSlug={videoSlug} />
-    </>
-  }
+    return <Categories />
 
-  return <NotFound />
 }
 
 export default Catalog;

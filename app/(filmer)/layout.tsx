@@ -19,6 +19,8 @@ function getBaseUrl() {
   }
 }
 
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   // metadataBase: new URL('https://beta.fagfilm.no'), //getBaseUrl()
   title: "Fagfilm",
