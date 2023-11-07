@@ -13,7 +13,7 @@ export default async function Home() {
   
   return (
     <div className="bg-cover bg-center h-screen w-full absolute b-0" style={{ backgroundImage: 'url(/front-image.jpg)' }}>
-      <div className="absolute bottom-0 w-full mt-auto bg-gradient-to-t from-black/80 from-50% pb-24 pt-32">
+      <div className="absolute bottom-0 w-full mt-auto bg-gradient-to-t from-black/80 from-50% pb-14 md:pb-24 pt-32">
         <h1 className="text-2xl md:text-3xl lg:text-4xl text-center pb-10">Utdanningsvalg på film</h1>
         <h2 className="text-2xl md:text-3xl lg:text-4xl  xl:lg:text-5xl text-center px-8">OPPLEV OG UTFORSK UTDANNINGS OG YRKESMULIGHETER</h2>
         <div className="flex justify-center w-full">
