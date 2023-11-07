@@ -131,9 +131,6 @@ const PrivacyCollapsible = () => {
           </Collapsible.Content>
         </section>
       </Collapsible.Root>
-
-
-
     </article >
     </div>
   );
