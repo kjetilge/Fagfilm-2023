@@ -17,8 +17,8 @@ export default function NavBar({ session }: { session: Session | null }) {
       <div
         className={`fixed top-0 w-full flex justify-center ${
           scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
-            : "bg-white/0"
+            ? " bg-black/50 backdrop-blur-xl"
+            : "bg-black/0"
         } z-30 transition-all`}
       >
         <div className="page-margins flex h-16 items-center justify-between w-full">
