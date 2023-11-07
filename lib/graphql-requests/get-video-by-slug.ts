@@ -3,7 +3,7 @@ import { VideoBySlugQuery } from './queries'
 const GRAPHQL_ENDPOINT = process.env.GRAPHQL_ENDPOINT as string
 const GRAPHQL_API_KEY = process.env.GRAPHQL_API_KEY as string
 
-export default async  function getCategoryBySlug(videoSlug: string) {
+export default async  function getVideoBySlug(videoSlug: string) {
   try {
     const response = await fetch(GRAPHQL_ENDPOINT, {
       cache: 'force-cache',
