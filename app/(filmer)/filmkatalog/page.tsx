@@ -1,9 +1,9 @@
 import Categories from '@/components/filmer/filmkatalog/categories/categories'
 
-const Filmkat = () => {
+const Filmkatalog = () => {
   return (
     <Categories />
   )
 }
 
-export default Filmkat
+export default Filmkatalog
