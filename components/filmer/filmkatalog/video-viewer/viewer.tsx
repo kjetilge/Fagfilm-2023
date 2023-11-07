@@ -23,8 +23,14 @@ async function Viewer({ videoSlug }: VideoProps) {
   if (!videoSlug) {
     return <NotFound />
   }
-  // console.log('videoSlug i video.tsx: ', videoSlug)
-  const video = await getVideoBySlug( videoSlug)
+
+  console.log('videoSlug i video.tsx: ', videoSlug)
+
+  const video = await getVideoBySlug(videoSlug)
+
+  if (!video) {
+    return <NotFound />
+  }
   const {fileName, posterTime} = video
 
   return (
