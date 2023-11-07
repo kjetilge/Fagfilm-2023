@@ -33,7 +33,7 @@ const SignInModal = ({
               height={20}
             />
           </a>
-          <h3 className="font-display text-2xl font-bold">Logg in</h3>
+          <h3 className="font-display text-2xl font-bold">Logg inn</h3>
           {/* <p className="text-sm text-gray-500">
             Hvis du har fått en skolekode skal du bruke epostinnlogging.
           </p> */}
