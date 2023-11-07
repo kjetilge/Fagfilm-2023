@@ -16,7 +16,7 @@ module.exports = {
         'h-scroll-aspects': { 'raw': '(min-aspect-ratio: 14/12) and (max-aspect-ratio: 20/12)' },
         'tablet-aspects': { 'raw': '(min-aspect-ratio: 20/12) and (max-aspect-ratio: 21/12)' },
         'wide-desktop-aspects': { 'raw': '(min-aspect-ratio: 21/12)' },
-
+        'ultra-wide-desktop-aspects': { 'raw': '(min-aspect-ratio: 28/12)' },
       },
       containers: {
         '2xs': '16rem',

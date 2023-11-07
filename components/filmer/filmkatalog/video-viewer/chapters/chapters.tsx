@@ -26,58 +26,21 @@ const chapters = ({video, player}: ChaptersProps) => {
   return (
     <>
     {/* aspect media queriers are defined in tailwing.config.js */}
-    {/* on aspects larger than aspect-min20/12 swith to vertical scroller to the right of player */}
+    {/* on aspects larger than wide-desktop-aspects swith to vertical scroller to the RIGHT of player */}
 
-    {/* <nav className={`aspect-max14/12:v-scroll-chapters-nav  aspect-min14/12:h-scroll-chapters-nav`}>
-      <ul className="aspect-max14/12:v-scroll-chapters-ul aspect-min14/12:h-scroll-chapters-ul">
-        {chapters.map((chapter, index) => (
-          <li className="aspect-max14/12:v-scroll-chapters-li  aspect-min14/12:h-scroll-chapters-li" key="{index}">
-            <Chapter video={video} chapter={chapter} player={player}/>
-          </li>
-        ))}
-      </ul>
-    </nav> */}
-
-    {/* <div className="v-scroll-chapters-nav-right @container">
-      <p className="v-scroll-chapters-ul-right @[100px]:bg-red-200 bg-indigo-600">TEKS</p>
-      <ul className="v-scroll-chapters-ul-right">
-        {chapters.map((chapter, index) => (
-          <li className="v-scroll-chapters-li" key="{index}">
-            <Chapter video={video} chapter={chapter} player={player}/>
-          </li>
-        ))}
-      </ul>
-    </div> */}
-
-
-    {/* @[400px]:columns-2 @[800px]:columns-3 */}
-    {/* leading-[0rem] to avoid space under ul*/}
-    {/* Working h scroller */}
-
-    {/* <ul className="h-scroll-chapters-ul leading-[0rem]">
+    <div className="hidden wide-desktop-aspects:grid grid-cols-1 ultra-wide-desktop-aspects:grid-cols-2 gap-1 overflow-y-auto w-full">
       {chapters.map((chapter, index) => (
-        <li className="aspect-video inline-block h-full @container" key="{index}">
-          <Chapter video={video} chapter={chapter} player={player}/>
-        </li>
-      ))}
-    </ul> */}
-
-
-    {/* working right side chapter nav */}
-    {/* @[400px]:columns-2 @[800px]:columns-3 */}
-    {/* <nav className="chapters-nav-r @container">
-      <ul className="">
-        {chapters.map((chapter, index) => (
-          <li className="aspect-video" key="{index}">
+        <div className="" key="{index}">
+          <div className="bg-slate-400 w-1920 h-1280 aspect-video">
             <Chapter video={video} chapter={chapter} player={player}/>
-          </li>
-        ))}
-      </ul>
-    </nav> */}
+          </div>
+        </div>
+      ))}
+    </div>
 
-    {/* Combine h and v scroll under player */}
 
-    <div className="grid grid-cols-3 gap-1 overflow-y-auto w-full bg-sky-700">
+    {/* Working v scroll under player */}
+    <div className="grid grid-cols-3 gap-1 overflow-y-auto w-full wide-desktop-aspects:hidden">
       {chapters.map((chapter, index) => (
         <div className="" key="{index}">
           <div className="bg-slate-400 w-1920 h-1280 aspect-video">

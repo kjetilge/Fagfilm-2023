@@ -36,7 +36,6 @@ const Chapter = ({ video, chapter, player }: ChapterProps) => {
             </h2>
           </div>
       </button>
-
     </>
   )
 }

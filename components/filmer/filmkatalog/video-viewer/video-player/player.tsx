@@ -106,21 +106,21 @@ function Player({ video }: PlayerProps) {
             ref={player}
           >
             <MediaProvider>
-              <Poster
-                className="vds-poster"
-                src={posterUrl}
-                alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
-              />
-              {textTracks.map((track) => (
-                <Track {...track} key={track.src} />
-              ))}
+                <Poster
+                  className="vds-poster"
+                  src={posterUrl}
+                  alt="Illustrasjonsbilde for videoen"
+                />
+                {/* {textTracks.map((track) => (
+                  <Track {...track} key={track.src} />
+                ))} */}
             </MediaProvider>
 
             {/* Layouts */}
-            <DefaultAudioLayout icons={defaultLayoutIcons} />
+
             <DefaultVideoLayout
               icons={defaultLayoutIcons}
-              thumbnails="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt"
+              // thumbnails="https://image.mux.com/VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU/storyboard.vtt"
             />
           </MediaPlayer>
         </main>
