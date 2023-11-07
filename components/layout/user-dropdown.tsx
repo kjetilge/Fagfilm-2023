@@ -11,6 +11,7 @@ export default function UserDropdown({ session }: { session: Session }) {
   const { email, image } = session?.user || {};
   const [openPopover, setOpenPopover] = useState(false);
 
+  
   if (!email) return null;
 
   return (
