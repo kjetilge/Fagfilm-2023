@@ -19,7 +19,7 @@ export default async function Home() {
         <div className="flex justify-center w-full">
           <div className="flex flex-col justify-between h-56 md:h-12 md:flex-row md:justify-around my-12 md:w-[800px]">
             <Link href="/bestill-fagfilm" className="bg-green-500 text-white py-3 px-4 w-44  rounded md:mb-0 text-center">BESTILL FAGFILM</Link>
-            <Link href="/bli-bruker" className="bg-blue-500 text-white py-3 px-4 w-44 rounded md:mb-0  text-center">BLI BRUKER</Link>
+            <Link href="/aktivere-feide" className="bg-blue-500 text-white py-3 px-4 w-44 rounded md:mb-0  text-center">AKTIVERE FEIDE</Link>
             <Link href="/filmkatalog" className="bg-red-500 text-white py-3 px-4 w-44 rounded  md:mb-0 text-center">SE FILM</Link>
             <Link href="/personvern" className="bg-gray-500 text-white py-3 px-4 w-44 rounded md:mb-0 text-center">PERSONVERN</Link>
           </div>

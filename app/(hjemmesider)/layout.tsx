@@ -34,7 +34,7 @@ export default async function RootLayout({
           {/* IKKE i bruk @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-        <main className="">
+        <main className="p-20">
           {children}
           
         </main>
