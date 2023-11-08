@@ -1,5 +1,4 @@
 import Markdown from 'react-markdown'
-import rehypeExternalLinks from 'rehype-external-links'
 
 // https://dev.to/jameswallis/how-to-use-the-remark-markdown-converters-with-next-js-projects-a8a
 
@@ -19,7 +18,7 @@ const BliBruker = async () => {
 
   return (
     <article className="prose prose-invert">
-     <Markdown remarkPlugins={[[ rehypeExternalLinks,  {target: ['_blank']} ]]} className="">{markdown}</Markdown>
+     <Markdown className="">{markdown}</Markdown>
     </article>
   )
 }
