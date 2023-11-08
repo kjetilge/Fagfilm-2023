@@ -14,6 +14,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   // metadataBase: new URL('https://beta.fagfilm.no'), //getBaseUrl()
   title: "Fagfilm",
+  metadataBase: new URL("https://ny.fagfilm.no"),
 }
 export default async function RootLayout({
   children,
