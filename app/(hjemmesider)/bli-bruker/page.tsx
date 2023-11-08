@@ -1,4 +1,7 @@
 import Markdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
+
+// https://dev.to/jameswallis/how-to-use-the-remark-markdown-converters-with-next-js-projects-a8a
 
 const markdown = `
 # Bli bruker
@@ -10,10 +13,13 @@ Feide og får tilgang til alt innholdet. Dette forutsetter at skolen din har kj�
 2. Skolen må ha [innført Feide-innlogging](https://www.feide.no/innforing-av-feide) samt ha [aktivert fagfilm tjenesten](https://www.feide.no/kundeportalen#tjenester) i [Feide kundeportal](kunde.feide.no)
 `;
 
-const BliBruker = () => {
+const BliBruker = async () => {
+
+
+
   return (
     <article className="prose prose-invert">
-     <Markdown className="">{markdown}</Markdown>
+     <Markdown remarkPlugins={[[ rehypeExternalLinks,  {target: ['_blank']} ]]} className="">{markdown}</Markdown>
     </article>
   )
 }
