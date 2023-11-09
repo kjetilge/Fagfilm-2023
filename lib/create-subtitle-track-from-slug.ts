@@ -6,15 +6,14 @@ async function checkFile(url: string) {
 }
 
 async function createSubtitleTrackFromSlug(slug: string) {
-  const subtitleSource = await checkFile(`/subtitles/${slug}.srt`);
+  const subtitleSource = await checkFile(`/subtitles/${slug}.vtt`);
 
   const subtitleTrack: SubtitleTrack = subtitleSource
     ? {
         src: subtitleSource,
-        label: 'English',
-        lang: 'en-US',
+        label: 'Norsk',
+        language: 'no-NB',
         kind: 'subtitles',
-        type: 'application/x-subrip',
         default: true,
       }
     : null;

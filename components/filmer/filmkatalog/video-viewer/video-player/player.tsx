@@ -51,7 +51,8 @@ function Player({ video }: PlayerProps) {
     // Initialize src.
     changeSource('video');
     const fetchSubtitleTrack = async () => {
-      const track = await createSubtitleTrackFromSlug(slug);
+      const track = await createSubtitleTrackFromSlug(video.slug);
+      console.log("track: ", track)
       setSubtitleTrack(track);
     };
 
@@ -100,10 +101,8 @@ function Player({ video }: PlayerProps) {
   return (
     <>
 
-      {/* <BackButton className="absolute top-0 left-0 z-10 p-3 ml-4">
-        <ArrowLeftIcon className="h-10 w-10 text-white" />
-      </BackButton> */}
-{/* aspect-min20/12:flex-row */}
+
+      {/* aspect-min20/12:flex-row */}
       {/* on large aspects use flex-row and padding on top in the beginnening so that top nav is on dark background */}
       {/* use aspect-min20/12:mt-[68px] only for a small aspect range in the switch between bottom and side chapters */}
       <div className="flex flex-col h-screen wide-desktop-aspects:flex-row">
@@ -121,24 +120,23 @@ function Player({ video }: PlayerProps) {
             onCanPlay={onCanPlay}
             ref={player}
           >
-            <MediaPlayer
-              aspectRatio="16/9"
-              className="player"
-              title={title}
-              src={src}
-              onProviderChange={onProviderChange}
-              onCanPlay={onCanPlay}
-              ref={player}
-            >
               <MediaProvider>
                 <Poster
                   className="vds-poster"
                   src={posterUrl}
                   alt="Illustrasjonsbilde for videoen"
                 />
-                {subtitleTrack && subtitleTrack.src && <Track {...subtitleTrack} />}
+                {/* {subtitleTrack && subtitleTrack.src && <Track {...subtitleTrack} />} */}
+                {/* <Track {...track} key={track.src} /> */}
+                <Track
+                  src={subtitleTrack?.src}
+                  kind="subtitles"
+                  label="Norsk"
+                  lang="no-NB"
+                  type="vtt"
+                  default
+                />
               </MediaProvider>
-
               {/* Layouts */}
 
               <DefaultVideoLayout
@@ -147,12 +145,14 @@ function Player({ video }: PlayerProps) {
               />
             </MediaPlayer>
         </main>
-        {/*  */}
         <Chapters video={video} player={player}/>
-        {/* <div className="h-40 w-10 bg-red-400">K</div> */}
       </div>
     </>
   );
 }
 
 export default Player;
+
+      {/* <BackButton className="absolute top-0 left-0 z-10 p-3 ml-4">
+        <ArrowLeftIcon className="h-10 w-10 text-white" />
+      </BackButton> */}

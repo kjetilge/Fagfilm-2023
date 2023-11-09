@@ -52,11 +52,10 @@ declare global {
     }
   }
   type SubtitleTrack = {
-    src: string;
-    label: string;
-    lang: string;
-    kind: string;
-    type: string;
-    default: boolean;
+    src: string | undefined
+    label: string | undefined;
+    language: string | undefined;
+    kind: TextTrackKind;
+    default: boolean | false;
   }| null;
 }
