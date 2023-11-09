@@ -134,7 +134,7 @@ function Player({ video }: PlayerProps) {
                   label="Norsk"
                   lang="no-NB"
                   type="vtt"
-                  default
+                  default={false}
                 />
               </MediaProvider>
               {/* Layouts */}
@@ -145,6 +145,7 @@ function Player({ video }: PlayerProps) {
               />
             </MediaPlayer>
         </main>
+        {/* <p>{JSON.stringify({subtitleTrack})}</p> */}
         <Chapters video={video} player={player}/>
       </div>
     </>
