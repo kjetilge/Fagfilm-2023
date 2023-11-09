@@ -21,7 +21,7 @@ export default function HomeLayout({
   params?: any
 }) {
   return (
-    <section>
+    <section className="flex justify-center pt-24 px-5 md:px-20">
       {children}
     </section>
   );

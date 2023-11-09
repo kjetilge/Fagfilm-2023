@@ -17,8 +17,8 @@ const PrivacyCollapsible = () => {
   };
 
   return (
-    <div className="">
-    <article  className="prose prose-invert prose-sm md:prose-lg lg:prose-xl max-w-none">
+    <div className="prose prose-invert">
+    <article  className="prose-sm md:prose-base  max-w-none">
       
       <h1 className="text-center text-5xl mb-3">Personvernerklæring</h1>
       <p className="">
