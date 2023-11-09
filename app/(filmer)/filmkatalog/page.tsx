@@ -3,8 +3,9 @@ import { Suspense } from 'react'
 // export const runtime = 'edge'
 
 const Filmkatalog = () => {
+  //  fallback={<p>Laster filmer...</p>}
   return (
-  <Suspense fallback={<p>Laster filmer...</p>}>
+  <Suspense>
     <Categories />
   </Suspense>
     
