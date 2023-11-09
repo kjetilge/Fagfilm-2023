@@ -21,7 +21,7 @@ export default function NavBar({ session }: { session: Session | null }) {
             : "bg-gradient-to-b from-black/60 from-40%"
         } z-30 transition-all`}
       >
-        <div className="page-margins flex h-24 pb-8 items-center justify-between w-full">
+        <div className="page-margins flex h-24 pb-10 items-center justify-between w-full">
           <div className="flex gap-2 md:gap-10 items-center">
             <Link href="/" className="flex items-center font-display text-2xl text-white">
               <Image
