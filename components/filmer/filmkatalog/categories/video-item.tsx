@@ -16,8 +16,8 @@ const VideoItem = ({video, categorySlug}: VideoItemProps) => {
           <div className="h-full">
             <Image
               src={thumbUrl}
-              width={800}
-              height={800}
+              width={400}
+              height={400}
               style={{
                 objectFit: 'cover',
               }}
