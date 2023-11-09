@@ -5,8 +5,6 @@ import { sfPro, inter } from "@/app/fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
-import Head from 'next/head';
-import favicon from '@/app/favicon.ico'
 import { Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
 import { Metadata } from 'next'
@@ -14,34 +12,17 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   // metadataBase: new URL('https://beta.fagfilm.no'), //getBaseUrl()
   title: "Fagfilm",
+  metadataBase: new URL("https://ny.fagfilm.no"),
 }
-export default async function RootLayout({
-  children,
+export default function HomeLayout({
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
+  params?: any
 }) {
   return (
-    <html lang="no_NB" suppressHydrationWarning>
-      {/* <Head>
-        <link rel="icon" href={favicon.src} sizes="any" />
-        <title>Fagfilm</title>
-      </Head>   */}
-      
-      <body className={`${cx(sfPro.variable, inter.variable)} dark`}>
-      <Theme appearance="dark">
-        {/* <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" /> */}
-        <Suspense fallback="...">
-          {/* IKKE i bruk @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
-        <main className="p-20">
-          {children}
-          
-        </main>
-        {/* <Analytics /> */}
-        </Theme>
-      </body>
-      
-    </html>
+    <section>
+      {children}
+    </section>
   );
 }

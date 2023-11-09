@@ -1,16 +1,7 @@
-// import Card from "@/components/hjemmesider/home/card";
-import Balancer from "react-wrap-balancer";
-import { DEPLOY_URL } from "@/lib/constants";
-import { Github, Twitter } from "@/components/shared/icons";
-// import WebVitals from "@/components/hjemmesider/home/web-vitals";
-// import ComponentGrid from "@/components/hjemmesider/home/component-grid";
-import Image from "next/image";
-import { nFormatter } from "@/lib/utils";
+
 import Link from "next/link";
-import { Flex, Text, Button } from '@radix-ui/themes';
-export default async function Home() {
-  // const session = await getServerSession(authOptions)
-  
+
+export default function Home() {
   return (
     <div className="bg-cover bg-center h-screen w-full absolute b-0" style={{ backgroundImage: 'url(/front-image.jpg)' }}>
       <div className="absolute bottom-0 w-full mt-auto bg-gradient-to-t from-black/80 from-50% pb-14 md:pb-24 pt-32">

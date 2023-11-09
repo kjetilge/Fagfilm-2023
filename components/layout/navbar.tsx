@@ -15,13 +15,13 @@ export default function NavBar({ session }: { session: Session | null }) {
     <>
       <SignInModal />
       <div
-        className={`fixed top-0 w-full flex justify-center ${
+        className={`fixed top-0 w-full flex justify-center  ${
           scrolled
-            ? " bg-black/50 backdrop-blur-xl"
-            : "bg-black/0"
+            ? "bg-gradient-to-b from-black/90 from-40%" // backdrop-blur-md
+            : "bg-gradient-to-b from-black/60 from-40%"
         } z-30 transition-all`}
       >
-        <div className="page-margins flex h-16 items-center justify-between w-full">
+        <div className="page-margins flex h-36 pb-20 items-center justify-between w-full">
           <div className="flex gap-2 md:gap-10 items-center">
             <Link href="/" className="flex items-center font-display text-2xl text-white">
               <Image

@@ -26,30 +26,14 @@ export const metadata: Metadata = {
   title: "Fagfilm",
 }
 
-export default async function RootLayout({
+export default async function FilmLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no_NB" suppressHydrationWarning>
-      {/* <Head>
-        <link rel="icon" href={favicon.src} sizes="any" />
-        <title>Fagfilm</title>
-      </Head>  */}
-      <body className={`${cx(sfPro.variable, inter.variable)} dark`}>
-      <Theme appearance="dark">
-        <Suspense fallback="...">
-          {/* IKKE i bruk @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
-
-        <main className="">
-          {children}
-        </main>
-        </Theme>
-      </body>
-      
-    </html>
+    <section>
+      {children}
+    </section>
   );
 }
