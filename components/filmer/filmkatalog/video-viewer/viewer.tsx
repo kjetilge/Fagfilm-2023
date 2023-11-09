@@ -8,6 +8,8 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/auth-options"
 import IkkeLoggetInn from "@/app/(hjemmesider)/ikke-logget-inn/page";
 import { redirect } from 'next/navigation'
 
+import createSubtitleTrackFromSlug from "@/lib/create-subtitle-track-from-slug";
+
 type VideoProps = {
   videoSlug: string | undefined;
 }
@@ -27,7 +29,9 @@ async function Viewer({ videoSlug }: VideoProps) {
   console.log('videoSlug i video.tsx: ', videoSlug)
 
   const video = await getVideoBySlug(videoSlug)
+  // const subtitleTrack = await createSubtitleTrackFromSlug(videoSlug)
 
+  // console.log('subtitleTrack: ', subtitleTrack)
   if (!video) {
     return <NotFound />
   }

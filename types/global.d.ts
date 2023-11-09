@@ -51,5 +51,12 @@ declare global {
       }[]
     }
   }
+  type SubtitleTrack = {
+    src: string;
+    label: string;
+    lang: string;
+    kind: string;
+    type: string;
+    default: boolean;
+  }| null;
 }
-
