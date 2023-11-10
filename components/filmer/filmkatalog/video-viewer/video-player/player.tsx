@@ -98,6 +98,7 @@ function Player({ video }: PlayerProps) {
         break;
     }
   }
+  console.log('subtitleTrack: ', subtitleTrack)
   return (
     <>
 
@@ -126,16 +127,7 @@ function Player({ video }: PlayerProps) {
                   src={posterUrl}
                   alt="Illustrasjonsbilde for videoen"
                 />
-                {/* {subtitleTrack && subtitleTrack.src && <Track {...subtitleTrack} />} */}
-                {/* <Track {...track} key={track.src} /> */}
-                <Track
-                  src={subtitleTrack?.src}
-                  kind="subtitles"
-                  label="Norsk"
-                  lang="no-NB"
-                  type="vtt"
-                  default={false}
-                />
+                {subtitleTrack && subtitleTrack.src && <Track {...subtitleTrack} key={subtitleTrack.src} />}
               </MediaProvider>
               {/* Layouts */}
 
