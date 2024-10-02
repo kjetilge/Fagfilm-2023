@@ -11,6 +11,9 @@ type Category = {
 }
 
 export default async  function getCategories() {
+  // console.log('Henter filmkategorier')
+  // console.log('GRAPHQL_ENDPOINT', GRAPHQL_ENDPOINT)
+  // console.log('GRAPHQL_API_KEY', GRAPHQL_API_KEY)
   try {
     const response = await fetch(GRAPHQL_ENDPOINT, {
       cache: 'force-cache',
@@ -23,12 +26,16 @@ export default async  function getCategories() {
         query: CategoriesQuery
       })
     });
+    
     const  body = await response.json();
+    // console.log('body', body)
+
     const categories = body.data.listCategorys.items
+    // console.log(categories)
     const filteredCategories = categories.filter((category: Category) => category.name !== "Ikke valgt")
     filteredCategories.sort((a:Category, b: Category) => a.rank - b.rank);
     return filteredCategories
   } catch (error) {
-    console.error(error);
+    console.error('Her gikk det galt:\n', error);
   }
 }

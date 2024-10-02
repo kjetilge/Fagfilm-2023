@@ -30,7 +30,7 @@ const chapters = ({video, player}: ChaptersProps) => {
 
     <div className="hidden wide-desktop-aspects:grid grid-cols-1 ultra-wide-desktop-aspects:grid-cols-2 gap-1 overflow-y-auto w-full">
       {chapters.map((chapter, index) => (
-        <div className="" key="{index}">
+        <div className="" key={index}>
           <div className="bg-slate-400 w-1920 h-1280 aspect-video">
             <Chapter video={video} chapter={chapter} player={player}/>
           </div>
@@ -42,7 +42,7 @@ const chapters = ({video, player}: ChaptersProps) => {
     {/* Working v scroll under player */}
     <div className="grid grid-cols-3 gap-1 overflow-y-auto w-full wide-desktop-aspects:hidden">
       {chapters.map((chapter, index) => (
-        <div className="" key="{index}">
+        <div className="" key={index}>
           <div className="bg-slate-400 w-1920 h-1280 aspect-video">
             <Chapter video={video} chapter={chapter} player={player}/>
           </div>
