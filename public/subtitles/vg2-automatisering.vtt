@@ -1,0 +1,182 @@
+WEBVTT
+
+00:00:11.000 --> 00:00:20.000
+Automation er automatisering av prosesser, som transportbånd, ventiler som går opp og ned av seg selv, målinger.
+
+00:00:25.000 --> 00:00:32.000
+Det brukes nesten overalt, veldig mye i industri og husholdning faktisk.
+
+00:00:39.000 --> 00:00:45.000
+Jeg liker å holde på med dupeditter og dupedatter. Mamma kom hjem og lurte på om vi kunne få lyskrone.
+
+00:00:45.000 --> 00:00:54.000
+Vi hadde vært hos noen venner som synes det var veldig kult. Da fikk jeg koblet opp den og montert den. Det var veldig moro det.
+
+00:01:10.000 --> 00:01:23.000
+Den sensoren skal merke at det ikke er noen brikke her, og da skal den gi signal til den om at den skal bytte her.
+
+00:01:23.000 --> 00:01:29.000
+Jeg valgte VG2 automasjon for jeg føler det passer veldig bra med det jeg liker å holde på med,
+
+00:01:29.000 --> 00:01:34.000
+det jeg gjør på fritiden og det er noe jeg kunne tenke meg å gjøre i fremtiden.
+
+00:01:34.000 --> 00:01:39.000
+Programfagene vi har er prosjekt til fordypning. Det er mye her vi må finne ut av selv.
+
+00:01:39.000 --> 00:01:46.000
+I de andre fagene får vi en aning av hva det er, og mye opplæring. Det her må vi finne mye selv.
+
+00:01:46.000 --> 00:01:54.000
+Også har vi automasjon, og der gjør vi alle automtiske jobber, oppkoblinger
+
+00:01:54.299 --> 00:02:00.000
+Også har vi Elenergi. Det er mer husholdningsinstallasjoner,
+
+00:02:01.000 --> 00:02:07.000
+som stikkontakter med høyere strøm, 400 wolt og den slags.
+
+00:02:15.000 --> 00:02:17.000
+- Det ble litt for mye.
+
+00:02:18.000 --> 00:02:20.000
+- Ta den andre veien.
+
+00:02:23.000 --> 00:02:25.000
+- Still hastigheten på transportbåndet.
+
+00:02:26.000 --> 00:02:30.000
+- Hvis du lar hastigheten være og setter opp retardasjonstiden litt av det, så gjør det parametret 2.
+
+00:02:41.000 --> 00:02:52.000
+Vi har også mekanisk arbeid som går ut på sveising, boring, en del HMS.
+
+00:02:52.000 --> 00:02:59.000
+- Stopper du dreieretningen i den ene retningen, så kan du ikke starte den andre retningen før den tiden har gått.
+
+00:02:59.000 --> 00:03:02.000
+- Så det er det dere skal programmere nå.
+
+00:03:02.000 --> 00:03:09.000
+Det her er en PLS, som starter og stopper for eksempel et transportbånd, som vi holder på med nå.
+
+00:03:09.000 --> 00:03:19.000
+Her ser vi programmet jeg har laget med tidsrelé, brytere her, så nå kan jeg simulere programmet.
+
+00:03:19.000 --> 00:03:23.000
+Når du skal starte og stoppe, og hva den skal starte og stoppe,
+
+00:03:24.000 --> 00:03:29.000
+etter en viss tid, eller når noe annet har startet, så starter det automatisk.
+
+00:03:32.000 --> 00:03:37.000
+Det som gir meg kick er først og fremst miljøet i klassen.
+
+00:03:37.000 --> 00:03:44.000
+Det er jo et veldig bra miljø. Vi gjør mye sosialt, under oppkoblingen, eller det praktiske arbeidet,
+
+00:03:45.000 --> 00:03:48.000
+så er det den mestringsfølelsen du får når du først får det til,
+
+00:03:49.000 --> 00:03:53.000
+hvis det har vært noe feil, eller at du ikke får det til på en stund, og så når du først får det til.
+
+00:03:53.000 --> 00:03:54.000
+Det er jo veldig moro.
+
+00:03:57.000 --> 00:04:00.000
+Jeg har vært på utplassering i to uker i en bedrift.
+
+00:04:01.000 --> 00:04:03.000
+Veas heter den. Den ligger i Slemmestad.
+
+00:04:03.000 --> 00:04:05.000
+De driver med rensing av slam.
+
+00:04:06.000 --> 00:04:08.000
+Der er det veldig mye automasjon.
+
+00:04:08.000 --> 00:04:11.000
+Hele anlegget er automatisk, og det går av seg selv.
+
+00:04:11.000 --> 00:04:14.000
+Det er veldig mye du kobler, og du gjør noe nytt hver dag.
+
+00:04:15.000 --> 00:04:16.000
+Det var en veldig bra opplevelse.
+
+00:04:17.000 --> 00:04:22.000
+I dag fikk vi i oppgave å skrive en rapport om der vi var utplassert,
+
+00:04:23.000 --> 00:04:28.000
+skrive om hvordan miljøet var der, og hvilke arbeidsoppgaver vi hadde,
+
+00:04:28.000 --> 00:04:30.000
+hvordan mine muligheter er der,
+
+00:04:30.000 --> 00:04:33.000
+hva de driver med, og hva bedriften gjør.
+
+00:04:42.000 --> 00:04:50.000
+Det den oppgaven går ut på, er å flytte de kubene fra det ene transportbåndet over til det andre.
+
+00:04:50.000 --> 00:05:00.000
+Da bruker vi et koordinatsystem for å programmere den roboten til hvor den skal settes ned, hvor den skal slippe, når den skal gripe, og så videre.
+
+00:05:11.000 --> 00:05:20.000
+Det er en liten ekstra, egentlig kunne den bare gått rett over, men nå har vi lagt inn litt for moro skyld alle sekvensene og snurret og dupeditter.
+
+00:05:20.000 --> 00:05:26.000
+Den ser at den har en refleks der nede som gir signal.
+
+00:05:27.000 --> 00:05:31.000
+Når den går bort, får den ikke noe signal.
+
+00:05:31.000 --> 00:05:34.000
+Når den er der, får den signal at den er der.
+
+00:05:35.000 --> 00:05:36.000
+Da er vi i stand til å gripe.
+
+00:05:37.000 --> 00:05:39.000
+Her ser du alle punktene vi har laget.
+
+00:05:39.000 --> 00:05:44.000
+Vi kjører maskinen til hvert punkt og lagrer det punktet.
+
+00:05:44.000 --> 00:05:47.000
+Det blir til slutt en hel sekvens som den gjør.
+
+00:05:52.000 --> 00:05:56.000
+Transportbåndet flytter jo bare rundt og rundt.
+
+00:05:57.000 --> 00:05:59.000
+Det beste jeg gjør, er det praktiske.
+
+00:06:00.000 --> 00:06:08.000
+Det i forkant synes jeg ikke er så moro, men når du først får gjort det praktiske, og kobler og gjør det praktiske, det er moro.
+
+00:06:09.000 --> 00:06:15.000
+Det som er mest utfordrende er beregning av hvilke typer vern og hvilke type kabler vi skal ha.
+
+00:06:16.000 --> 00:06:20.000
+Vi må regne ut alt det, og hvis det blir for lavt, så går det galt,
+
+00:06:20.000 --> 00:06:25.000
+blir det for høyt, så går det ikke galt, men da blir det kanskje for dyrt.
+
+00:06:34.000 --> 00:06:46.000
+VG2 automasjon passer for de som synes det er moro å koble, og kanskje har lyst til å jobbe mer i industrien og ikke i bygg, i husholdning og sånn.
+
+00:06:47.000 --> 00:06:53.000
+Etter videregående er planen å bli lærling og få et fagbrev,
+
+00:06:53.000 --> 00:06:57.000
+så får vi se hva det bringer etter det.
+
+00:06:57.000 --> 00:07:05.500
+Drømmejobben er jo det å gå rundt på et anlegg og fikse det som går galt, eller det som ikke fungerer,
+
+00:07:05.500 --> 00:07:09.000
+og få det til å funke, og du vet hva som er feilen, og kan fikse det med en gang.
+
