@@ -1,0 +1,236 @@
+WEBVTT
+
+00:00:09.000 --> 00:00:15.000
+Jeg valgte VG2 informasjonsteknologi fordi jeg er interessert i datamaskiner og programmering.
+
+00:00:15.000 --> 00:00:18.000
+Jeg har programmert før, og jeg liker det.
+
+00:00:18.000 --> 00:00:22.000
+Vi utvikler websider med HTML, CSS og JavaScript.
+
+00:00:22.000 --> 00:00:27.000
+Vi programmerer dem til å ha en fin layout.
+
+00:00:27.000 --> 00:00:31.000
+Vi bruker Brutestrap, som er et rammeverk som gjør nesten alt for deg.
+
+00:00:31.000 --> 00:00:33.000
+Du må bare sette delene sammen.
+
+00:00:36.000 --> 00:00:42.000
+Andre som går på drift lager serverer og setter dem opp og administrerer brukere.
+
+00:00:42.000 --> 00:00:46.000
+Man lærer hvordan alt dette fungerer i en større bedrift, for eksempel,
+
+00:00:46.000 --> 00:00:49.000
+mens her på Bleiker lærer vi mest om programmering.
+
+00:00:49.000 --> 00:00:54.000
+Som siste oppgave vi hadde lagde vi en webside hvor vi kunne logge inn.
+
+00:00:55.000 --> 00:01:01.000
+Ordne sikkerhet, lage passord, kryptering
+
+00:01:01.000 --> 00:01:07.000
+Som man hadde gjort på en større bedrift, eller i produksjon.
+
+00:01:07.000 --> 00:01:11.000
+Det handler ikke så mye om hvilket programmeringsspråk du bruker, eller rammeverk.
+
+00:01:11.000 --> 00:01:18.000
+Det handler mest om logikken og hvordan datamaskinen tar stegene for å komme til resultatet.
+
+00:01:18.000 --> 00:01:23.000
+Det kan man gjøre i hvilket som helst  programmeringsspråk og rammeverk.
+
+00:01:23.000 --> 00:01:25.799
+Det er veldig gøy å lage det selv.
+
+00:01:25.799 --> 00:01:30.000
+- Nå bare bytter jeg det til tekst.
+
+00:01:34.000 --> 00:01:38.000
+- Det er bare lettere hvis vi gjør det sånn.
+
+00:01:45.000 --> 00:01:49.000
+Vi programmerer i javascript, og det er nesten engelsk.
+
+00:01:49.000 --> 00:01:52.000
+Du skriver bare dette og dette.
+
+00:01:52.000 --> 00:01:55.000
+If eller hvis dette er sant, gjør dette,
+
+00:01:55.000 --> 00:01:58.000
+hvis noe annet er sant, gjør dette.
+
+00:01:58.000 --> 00:02:00.000
+Du kaller det for funksjoner.
+
+00:02:00.000 --> 00:02:05.000
+Å lære programmering er lett, men å fordype seg i det blir vanskelig.
+
+00:02:05.000 --> 00:02:12.000
+Før man begynner å kode, bør man ha en oversikt over hvordan alt skal bli, både i kode og i ferdig produkt.
+
+00:02:16.000 --> 00:02:21.000
+Etterpå prøver du å tegne inn de linjene som du har begrenset deg til.
+
+00:02:21.000 --> 00:02:26.000
+Du kan redigere på det, slette noen linjer, lage en annen firkant hvis du vil,
+
+00:02:26.000 --> 00:02:33.000
+men så lenge du har et sted du vet du vil komme til, da kommer det til å gå bra.
+
+00:02:33.000 --> 00:02:37.000
+- Da vil jeg at dere skal gå sammen i grupper,
+
+00:02:37.000 --> 00:02:47.000
+- og så skal dere diskutere hvordan vi kan øke andelen katte- og hundebilder på internett
+
+00:02:47.000 --> 00:02:52.000
+- på bekostning av antallet bilder av folk sin middag.
+
+00:02:52.000 --> 00:02:55.000
+- Du kan lage en AI som finner middagen din på Instagram,
+
+00:02:55.000 --> 00:03:01.000
+- og så bare swapper den innholdet med kattebilder eller hundebilder.
+
+00:03:01.000 --> 00:03:05.000
+- Og vi skal være de eneste som kan dele bilder av katter og hunder.
+
+00:03:05.000 --> 00:03:09.000
+- Katter og hunder gir mest points med folk som tar bilder av maten sin.
+
+00:03:09.000 --> 00:03:11.000
+- Så social points?
+
+00:03:11.000 --> 00:03:15.000
+- Hvis du legger ut bilder av katter og hunder så får du mer social points?
+
+00:03:15.000 --> 00:03:17.000
+- Da får du billigere rente.
+
+00:03:21.000 --> 00:03:23.000
+- Så får man mindre skatt.
+
+00:03:23.000 --> 00:03:25.000
+- Man kan bruke masse social points.
+
+00:03:25.000 --> 00:03:29.000
+- Da gir en AI masse hunde- og kattebilder,
+
+00:03:29.000 --> 00:03:31.000
+- så sier man at det er kattebilder,
+
+00:03:31.000 --> 00:03:34.000
+- og så gir en AI masse matbilder,
+
+00:03:34.000 --> 00:03:36.000
+- og sier den at det er matbilder,
+
+00:03:36.000 --> 00:03:39.000
+- så får man en AI til å sortere
+
+00:03:39.000 --> 00:03:41.000
+- hva som er matbildet og hva som er kattebildet,
+
+00:03:41.000 --> 00:03:45.000
+- så gir man da penger eller straff for det man har lagt ut.
+
+00:03:45.000 --> 00:03:47.000
+Det kan være vanskelig.
+
+00:03:47.000 --> 00:03:49.000
+For meg gikk det veldig bra.
+
+00:03:49.000 --> 00:03:51.000
+Jeg kunne programmering fra før.
+
+00:03:51.000 --> 00:03:53.000
+Det gikk fint for meg på skolen,
+
+00:03:53.000 --> 00:03:56.000
+mens de andre måtte lære programmering fra bunnen,
+
+00:03:56.000 --> 00:03:58.000
+men alle kan programmering nå.
+
+00:03:58.000 --> 00:04:00.000
+Alle kan lage en webside,
+
+00:04:00.000 --> 00:04:01.000
+og alt gikk fint.
+
+00:04:01.000 --> 00:04:04.000
+- Hva er en bra ting vi kan bruke AI til?
+
+00:04:04.000 --> 00:04:07.000
+- Ja, det kan gjenkjenne sykdommer da,
+
+00:04:07.000 --> 00:04:11.000
+- før de blir alvorlige og potensielt redde menneskeliv.
+
+00:04:11.000 --> 00:04:13.000
+- Så hvis du tenker på det,
+
+00:04:13.000 --> 00:04:15.000
+- hvordan definerer vi egentlig sykdommer i dag,
+
+00:04:15.000 --> 00:04:17.000
+- eller hvordan gjennkjenner vi sykdommer i dag?
+
+00:04:17.000 --> 00:04:21.000
+Til neste år skal jeg bli læring i Lånekassen i Oslo.
+
+00:04:21.000 --> 00:04:23.000
+Jeg skal drive med å utvikle websider.
+
+00:04:23.000 --> 00:04:28.000
+Det er passer for folk som er interessert i PCer, datamaskiner og programmer,
+
+00:04:28.000 --> 00:04:30.000
+og som vil vite hvordan de er laget
+
+00:04:30.000 --> 00:04:31.000
+for å lage selv.
+
+00:04:31.000 --> 00:04:38.000
+Hvis man er utvikler kan man jobbe med utvikling og lage programmer, websider, servere
+
+00:04:38.000 --> 00:04:43.000
+og dele det med tusenvis av folk som bruker internettet hver dag.
+
+00:04:43.000 --> 00:04:47.000
+Jeg tror ikke det er nødvendig å gå til universitet for å få en jobb i dag.
+
+00:04:48.000 --> 00:04:51.000
+Jeg tror jeg kan få jobb etter læringtiden.
+
+00:04:51.000 --> 00:04:55.000
+Etter to år får man mye praksiserfaring,
+
+00:04:55.000 --> 00:04:58.000
+som jeg tror kommer til å være veldig attraktivt for min neste arbeidsgiver.
+
+00:04:58.000 --> 00:05:01.000
+Det jeg liker best med programmering er å jobbe i bakgrunnen,
+
+00:05:01.000 --> 00:05:03.000
+og jobbe med det som skjer på PCen,
+
+00:05:03.000 --> 00:05:05.000
+som folk ikke ser.
+
+00:05:05.000 --> 00:05:08.000
+Hvis folk ikke ser at noe går galt,
+
+00:05:08.000 --> 00:05:09.000
+da har jeg gjort jobben min riktig,
+
+00:05:09.000 --> 00:05:11.000
+og jeg synes det er veldig bra.
+

@@ -1,0 +1,236 @@
+WEBVTT
+
+00:00:11.000 --> 00:00:18.000
+Prox Dynamics (heter nå FLIR) er et internasjonalt selskap som ligger helt i forkant på flyvende nanosensorteknologi.
+
+00:00:18.000 --> 00:00:25.000
+Vi har store deler av produksjonen i Norge, og all utvikling skjer i Norge.
+
+00:00:25.000 --> 00:00:36.000
+En stor del av utviklingsmiljøet vårt er unge mennesker, og mange av dem kommer direkte fra utdanning og har spisset seg og er eksperter i feltet.
+
+00:00:36.000 --> 00:00:40.000
+Dette er den flyvende nanosensoren vår.
+
+00:00:40.000 --> 00:00:49.000
+Den har tre kameraer i forkant, og en ny type har også et infrarødt kamera.
+
+00:00:49.000 --> 00:00:55.000
+Den veier 18 gram og flyr veldig stille.
+
+00:00:55.000 --> 00:01:09.000
+I for eksempel en snøskredsituasjon, hvis du bruker den til søk og redning, så kan denne være vital fordi du får et raskt overblikk over om det finnes mennesker i snøen.
+
+00:01:10.000 --> 00:01:19.000
+I forsvarssammenheng er det genialt å kunne se rundt hjørner og se fienden før de ser deg.
+
+00:01:19.000 --> 00:01:25.000
+Den er også fin å bruke hvis du blir skutt på, men ikke vet hvor.
+
+00:01:25.000 --> 00:01:31.000
+Så kan du sende den opp, få et overblikk over situasjonen, og også finne en måte å komme deg vekk derfra på.
+
+00:01:32.000 --> 00:01:39.000
+Det termiske kamera gir den også en nattegenskap som er hensiktsmessig å bruke.
+
+00:01:39.000 --> 00:01:44.000
+Politi og brannvesen kan også fint benytte seg av en sånn sensor.
+
+00:01:55.000 --> 00:02:04.000
+Arbeidsoppgavene dine ved Prox Dynamics er å utvikle elektronikken inni den flyvende nanosensoren,
+
+00:02:04.000 --> 00:02:14.000
+men også å lage evalueringskretser for å evaluere nye systemer og konsepter.
+
+00:02:14.000 --> 00:02:26.000
+Til dette bruker jeg dataprogrammer, hvor man tegner et elektrisk skjema som viser de logiske koblingene mellom komponentene,
+
+00:02:26.000 --> 00:02:35.000
+og et layoutprogram, hvor man tegner hvordan kretsen blir når den er ferdigprodusert og du kan holde den i hånden.
+
+00:02:35.000 --> 00:02:44.000
+Det er hovedoppgavene, men når du får tilbake noe du har lagd, så er det ofte at man også lodder på komponenter.
+
+00:02:44.000 --> 00:02:55.000
+Når man setter på strøm, så er det en jobb som inngår i å verifisere at designet fungerer sånn som er tiltenkt.
+
+00:02:55.000 --> 00:03:04.000
+En del av det er ofte å programmere mikrokontrolleren, som er hjernen i elektronikken.
+
+00:03:04.000 --> 00:03:09.000
+Nå jobber jeg med et evalueringskort for en kamerasensor.
+
+00:03:09.000 --> 00:03:22.000
+Det vil si at vi lager et kort som gjør det vi forventer at det skal gjøre, og så ser vi om måten vi har tenkt å bruke det på fungerer i praksis.
+
+00:03:23.000 --> 00:03:36.000
+Jeg jobber også med en batteripakke, som på sikt vil gjøre at sensoren vår kan fly lenger og tåle flere runder med lading.
+
+00:03:36.000 --> 00:03:44.000
+Det jeg liker best ved jobben er utleggsbiten, hvor man tegner hvordan det blir når du holder det i hånden.
+
+00:03:44.000 --> 00:03:51.000
+Det er fordi jeg synes det er gøy å lage ting, og det er den biten som er håndverket ved elektronikken.
+
+00:03:51.000 --> 00:03:57.000
+Det er når du setter deg ned og bestemmer hvor baner skal gå, og hvor komponenter skal plasseres.
+
+00:03:57.000 --> 00:04:04.000
+Det er også veldig utfordrende, fordi spesielt i bedriften her har vi så lite plass.
+
+00:04:04.000 --> 00:04:14.000
+Da blir det så vanskelig å beholde signalene gjennom kretsen, uten at de forstyrrer hverandre og ødelegger.
+
+00:04:14.000 --> 00:04:17.000
+Det synes jeg er kjempespennende.
+
+00:04:17.000 --> 00:04:21.000
+Det er også veldig moro når du setter på strøm og ser at det fungerer.
+
+00:04:21.000 --> 00:04:25.000
+Når det ikke fungerer, så lærer man.
+
+00:04:25.000 --> 00:04:31.000
+Her ser vi et utlegg hvor man tegner hvordan brettet kommer til å se ut i virkeligheten.
+
+00:04:31.000 --> 00:04:39.000
+Dette er et faktisk brett som vi har sendt inn til produksjon, og sånn kommer det tilbake når det er ferdig produsert.
+
+00:04:40.000 --> 00:04:46.000
+Når det kommer hit, så er det min jobb å lodde på komponentene.
+
+00:04:46.000 --> 00:04:53.000
+Når det er ferdig loddet og klippet ut, så ser det slik ut.
+
+00:04:53.000 --> 00:05:13.000
+Det denne gjør, er at den kobler alle disse små temperatursensorene, som dere ser her oppe, til en kontakt som dere kan koble til PC-en.
+
+00:05:13.000 --> 00:05:16.000
+Sånn kan vi måle temperatur.
+
+00:05:17.000 --> 00:05:23.000
+Jeg ville bli elektronikkingeniør fordi jeg alltid har vært fascinert av verdensrommet.
+
+00:05:23.000 --> 00:05:32.000
+Jeg siktet ganske tidlig inn mot en videregående retning som heter romteknologi på Andøya.
+
+00:05:32.000 --> 00:05:40.000
+Men på veien dit, så skjønte jeg at det er mye mer enn bare verdensrommet som er gøy.
+
+00:05:40.000 --> 00:05:51.000
+Det er masse ting som skjer rundt i iPhonen din, i TV-en din, i alt mulig rart i samfunnet rundt deg som har elektronikk i seg.
+
+00:05:51.000 --> 00:05:58.000
+Så fikk jeg vite at jeg gikk an å studere dette her på et høyere nivå enn videregående.
+
+00:05:58.000 --> 00:06:08.000
+Da skiftet jeg fokus og tok forkurs for ingeniørutdanning og startet på bachelor romteknologi ved Høyskolen i Narvik.
+
+00:06:09.000 --> 00:06:18.000
+Derfra har jeg gått på satellitt master, og det har vært noen fantastiske år, og jeg har lært masse.
+
+00:06:18.000 --> 00:06:24.000
+På bacheloren skjøt vi til og med opp en missil fra Andøya rakettskytefelt.
+
+00:06:41.000 --> 00:06:45.000
+Det er mange måter å bli elektronikkingeniør på.
+
+00:06:45.000 --> 00:06:57.000
+Du kan gå via yrkesveien og så på forkurs og rett inn for å slippe å få generell studiekompetanse først.
+
+00:06:57.000 --> 00:07:06.000
+Du kan også gå på studiespesialisering tre år, og så rett over på bachelorstudiet.
+
+00:07:06.000 --> 00:07:13.000
+Det er mange elektronikkstudier som ikke nødvendigvis heter elektronikkbachelor eller master,
+
+00:07:13.000 --> 00:07:20.000
+men som også inneholder det du skal for å kunne kalle deg en elektronikkingeniør.
+
+00:07:20.000 --> 00:07:24.000
+Så det er noe man bør sjekke når man søker.
+
+00:07:26.000 --> 00:07:29.000
+- Jon Morten? Jeg lurte på noe med jordplanet.
+
+00:07:29.000 --> 00:07:33.000
+- Blir det for lite for å ta all varmen som kommer gjennom transistorene?
+
+00:07:38.000 --> 00:07:42.290
+Noe som er veldig spesielt med yrket... det er flere ting:
+
+00:07:45.439 --> 00:07:48.000
+Du finner det igjen i samfunnet rundt deg overalt,
+
+00:07:48.000 --> 00:07:54.000
+men for selve yrket er det at du ofte kommer i kontakt med andre fagmiljøer,
+
+00:07:54.000 --> 00:07:58.000
+som mekanikk, for elektronikken skal jo passe inn i noe,
+
+00:07:58.000 --> 00:08:05.000
+men også programmering som er mer software- og datafag.
+
+00:08:05.000 --> 00:08:13.000
+Så du må tilegne deg kunnskap fra flere fagfelter enn kun elektronikk.
+
+00:08:13.000 --> 00:08:16.000
+Det er kjempespennende.
+
+00:08:25.000 --> 00:08:30.000
+Utfordringen i starten i yrket er å skaffe seg detaljkunnskap
+
+00:08:30.000 --> 00:08:36.000
+om alle komponentene som er der ute, som du skal bruke i design for å lage ting.
+
+00:08:36.000 --> 00:08:41.000
+Også det når du får overblikket over hele designet,
+
+00:08:41.000 --> 00:08:46.000
+og vite hvordan alle disse enkeltbitene påvirker hverandre.
+
+00:08:46.000 --> 00:08:52.000
+Når du har holdt på en stund, så er faktisk utfordringen å holde seg oppdatert,
+
+00:08:52.000 --> 00:08:55.000
+fordi det er så mye utvikling på feltet,
+
+00:08:55.000 --> 00:08:58.000
+og det er så mange spisse felt overalt.
+
+00:08:58.000 --> 00:09:04.000
+Så jeg vil faktisk si at det er en utfordring å holde seg oppdatert på nye ting.
+
+00:09:04.000 --> 00:09:06.000
+- Det var veldig morsomt.
+
+00:09:06.000 --> 00:09:08.000
+- Det var det sikkert Ivar som sa.
+
+00:09:08.000 --> 00:09:09.000
+- Kanskje.
+
+00:09:09.000 --> 00:09:11.000
+Jeg synes det er veldig hyggelig lønnsnivå.
+
+00:09:11.000 --> 00:09:15.000
+Vi er ikke den ingeniørretningen som tjener mest,
+
+00:09:15.000 --> 00:09:18.000
+men vi er ikke den som tjener minst.
+
+00:09:18.000 --> 00:09:21.000
+Jeg synes jeg har lykkes veldig godt i jobben.
+
+00:09:21.000 --> 00:09:23.000
+Når du har lagd noe som du kan holde i,
+
+00:09:23.000 --> 00:09:26.000
+og så setter du på strøm, og så ser du at det fungerer.
+
+00:09:26.000 --> 00:09:28.000
+Og det er det jobben handler om.
+
+00:09:28.000 --> 00:09:31.000
+Det er å lage ting, og få det til å funke.
+
